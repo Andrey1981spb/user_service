@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webapp:
+    container_name: test_db
+    build: src/
+    depends_on:
+      - psql
+  psql:
+    container_name: docker_db
+    build: src/
+    ports:
+      - 5432:5432

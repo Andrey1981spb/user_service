@@ -37,10 +37,16 @@
           <version>3.1.0</version>
         </plugin>
         <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+
         <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.2</version>
+          <configuration>
+            <outputDirectory>${project.basedir}/src</outputDirectory>
+          </configuration>
         </plugin>
+
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
@@ -50,41 +56,96 @@
           </configuration>
         </plugin>
 
-        <plugin>
-          <groupId>io.fabric8</groupId>
-          <artifactId>docker-maven-plugin</artifactId>
-          <version>0.31.0</version>
-          <configuration>
-            <verbose>true</verbose>
-            <images>
-              <image>
-                <name>docker_test</name>
-                <registry>docker.io/andrey1981spb/docker_test</registry>
-                <build>
-                  <dockerFile>${project.basedir}/Dockerfile_tk</dockerFile>
-                  <assembly>
-                    <descriptorRef>artifact</descriptorRef>
-                  </assembly>
-                </build>
-              </image>
-            </images>
-          </configuration>
-          <executions>
-            <execution>
-              <id>default</id>
-              <goals>
-                <goal>build</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>Push docker container</id>
-              <phase>deploy</phase>
-              <goals>
-                <goal>push</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
+
+          <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.0.2</version>
+          </plugin>
+
+        <!--
+                <plugin>
+                  <groupId>io.fabric8</groupId>
+                  <artifactId>docker-maven-plugin</artifactId>
+                  <version>0.31.0</version>
+                  <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                      <image>
+                        <name>docker_test</name>
+                        <build>
+                          <dockerFile>${project.basedir}/src/Dockerfile</dockerFile>
+                          <assembly>
+                            <descriptorRef>artifact</descriptorRef>
+                          </assembly>
+                        </build>
+                      </image>
+                    </images>
+                  </configuration>
+                  <executions>
+                    <execution>
+                      <id>default</id>
+                      <goals>
+                        <goal>build</goal>
+                      </goals>
+                    </execution>
+                  </executions>
+                </plugin>
+                 -->
+
+        <!--
+                <plugin>
+                  <groupId>io.fabric8</groupId>
+                  <artifactId>docker-maven-plugin</artifactId>
+                  <version>0.31.0</version>
+                  <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                      <image>
+                        <name>docker_db</name>
+                        <build>
+                          <dockerFile>${project.basedir}/database/Dockerfile</dockerFile>
+                          <assembly>
+                            <descriptorRef>artifact</descriptorRef>
+                          </assembly>
+                        </build>
+                      </image>
+                    </images>
+                  </configuration>
+                  <executions>
+                    <execution>
+                      <id>default</id>
+                      <goals>
+                        <goal>build</goal>
+                      </goals>
+                    </execution>
+                  </executions>
+                </plugin>
+ -->
+
+                <plugin>
+                  <groupId>com.dkanejs.maven.plugins</groupId>
+                  <artifactId>docker-compose-maven-plugin</artifactId>
+                  <version>2.4.0</version>
+                  <executions>
+                    <execution>
+                      <id>up</id>
+                      <phase>pre-integration-test</phase>
+                      <goals>
+                        <goal>up</goal>
+                      </goals>
+                      <configuration>
+                        <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+                        <detachedMode>true</detachedMode>
+                      </configuration>
+                    </execution>
+                    <execution>
+                    <configuration>
+                      <build>true</build>
+                    </configuration>
+                    </execution>
+                  </executions>
+                </plugin>
+
 
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
