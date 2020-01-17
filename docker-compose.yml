@@ -1,12 +1,14 @@
 version: '3'
 services:
   webapp:
-    container_name: test_db
+    container_name: docker_test
     build: src/
+    image: andrey1981spb/docker_test
     depends_on:
       - psql
   psql:
     container_name: docker_db
     build: src/
+    image: andrey1981spb/docker_db
     ports:
       - 5432:5432
