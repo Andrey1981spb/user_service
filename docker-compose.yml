@@ -8,7 +8,7 @@ services:
       - psql
   psql:
     container_name: docker_db
-    build: src/
+    build: database/
     image: andrey1981spb/docker_db
     ports:
       - 5432:5432
