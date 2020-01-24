@@ -2,11 +2,20 @@ package ru.spb.dreamwhite.model;
 
 public class User {
 
-    protected Integer id;
+    private Integer id;
 
     private String email;
 
     public User() {
+    }
+
+    public User(String email) {
+        this.email = email;
+    }
+
+    public User(Integer id, String email) {
+        this.id = id;
+        this.email = email;
     }
 
     public String getEmail() {

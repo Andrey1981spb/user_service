@@ -1,5 +1,6 @@
 FROM tomcat:9-jre8-alpine
 
+ENV TEST_ROOT docker_test/test
 ENV PATH_TOMCAT_USERS /usr/local/tomcat/conf/
 ENV PATH_MANAGER /usr/local/tomcat/webapps/manager/
 ADD config/tomcat-users.xml  /usr/local/tomcat/conf/tomcat-users.xml

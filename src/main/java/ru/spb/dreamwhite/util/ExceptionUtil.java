@@ -1,7 +1,8 @@
 package ru.spb.dreamwhite.util;
 
+import org.postgresql.util.PSQLException;
 import ru.spb.dreamwhite.exception.ExistStorageException;
-import ru.spb.dreamwhite.exception.StorageException
+import ru.spb.dreamwhite.exception.StorageException;
 
 import java.sql.SQLException;
 

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="PostgreSQL - test_db@localhost" uuid="8a2df929-2961-4abc-85ed-fcbf3eb5e30c">
+    <data-source source="LOCAL" name="PostgreSQL - test_db" uuid="8a2df929-2961-4abc-85ed-fcbf3eb5e30c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/test_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://dreamwhite.ru:5432/test_psql</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="test_local@localhost" uuid="28201959-ace6-4dbf-b0a1-8ff2e02daf29">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/test_local</jdbc-url>
     </data-source>
   </component>
 </project>
