@@ -25,7 +25,8 @@ public class Config {
 
            // TCP-connection
         // userRepository = new UserRepository("jdbc:postgresql://dreamwhite.ru:5432/test_psql", "admin_psql", "Password2020#");
-        userRepository = new UserRepository("jdbc:postgresql:test_psql?socketFactory=org.newsclub.net.unix.socketfactory.PostgresqlAFUNIXSocketFactory&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5432", "admin_psql", "Password2020#");
+        userRepository = new UserRepository("jdbc:postgresql:test_psql?socketFactory=org.newsclub.net.unix.socketfactory.PostgresqlAFUNIXSocketFactory&socketFactoryArg" +
+                "=/var/run/postgresql/.s.PGSQL.5432", "admin_psql", "Password2020#");
 
      //   } catch (IOException e) {
       //      throw new IllegalStateException("Invalid config file " + PROPS.getAbsolutePath());
