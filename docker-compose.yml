@@ -1,18 +1,18 @@
 version: '3'
 
-volumes:
-  dbdata:
-
 services:
   webapp:
     container_name: docker_test
     build: src/
     image: andrey1981spb/docker_test
     volumes:
-    - "/var/run/postgres/.s.PGSQL.5432:/var/run/postgres/.s.PGSQL.5432"
-    - "dbdata:/var/lib/pgsql/data"
+      - "/var/run/postgresql/.s.PGSQL.5432:/var/run/postgresql/.s.PGSQL.5432"
+      - "/var/lib/pgsql/data:/var/lib/pgsql/data"
+      - "/var/run/postgresql/.s.PGSQL.5432:/tmp/.s.PGSQL.5432"
     depends_on:
       - psql
+    ports:
+    - 8080:50000
   psql:
     container_name: docker_db
     build: database/
