@@ -1,9 +1,16 @@
 version: '3'
+
+volumes:
+  dbdata:
+
 services:
   webapp:
     container_name: docker_test
     build: src/
     image: andrey1981spb/docker_test
+    volumes:
+    - "/var/run/postgres/.s.PGSQL.5432:/var/run/postgres/.s.PGSQL.5432"
+    - "dbdata:/var/lib/pgsql/data"
     depends_on:
       - psql
   psql:
@@ -12,3 +19,5 @@ services:
     image: andrey1981spb/docker_db
     ports:
       - 5432:5432
+
+
