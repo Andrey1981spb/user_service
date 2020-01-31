@@ -1,7 +1,5 @@
-FROM postgres:latest
+FROM postgres:11
 
-ENV POSTGRES_USER andrej
-ENV POSTGRES_PASSWORD password
-ENV POSTGRES_DB test_db
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 5432

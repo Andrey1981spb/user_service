@@ -11,7 +11,7 @@ import java.util.Properties;
 public class Config {
 
   //  private static final File PROPS = new File("test/sql/user.properties");
-      private static final File PROPS = new File( System.getProperty("TEST_ROOT") + "/sql/user.properties");
+    private static final File PROPS = new File( System.getProperty("TEST_ROOT") + "/sql/user.properties");
     private static final Config INSTANCE = new Config();
 
     private Properties props = new Properties();
@@ -25,7 +25,7 @@ public class Config {
 
            // TCP-connection
         // userRepository = new UserRepository("jdbc:postgresql://dreamwhite.ru:5432/test_psql", "admin_psql", "Password2020#");
-        userRepository = new UserRepository("jdbc:postgresql:test_psql?socketFactory=org.newsclub.net.unix.socketfactory.PostgresqlAFUNIXSocketFactory&socketFactoryArg=/var/run/postgresql/.s.PGSQL.5432", "admin_psql", "Password2020#");
+        userRepository = new UserRepository("jdbc:postgresql:test_psql?socketFactory=org.newsclub.net.unix.socketfactory.PostgresqlAFUNIXSocketFactory&socketFactoryArg=/socket_volume/.s.PGSQL.5432", "dreamwhite", "Password2020#");
 
      //   } catch (IOException e) {
       //      throw new IllegalStateException("Invalid config file " + PROPS.getAbsolutePath());
