@@ -7,18 +7,7 @@ services:
     image: andrey1981spb/docker_test
     ports:
       - 8080:50000
-    depends_on:
-      - psql3
 
-  psql3:
-    container_name: docker_db
-    build: database/
-    image: andrey1981spb/docker_db
-
-    command: postgres
-
-    ports:
-    - 5432:5432
 
 
 
