@@ -4,7 +4,7 @@ import ru.spb.dreamwhite.exception.ErrorType;
 
 import java.util.Arrays;
 
-public class ApplicationException {
+public class ApplicationException extends RuntimeException {
 
     private final ErrorType type;
     private final String msgCode;

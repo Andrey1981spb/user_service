@@ -1,18 +1,21 @@
 package ru.spb.dreamwhite.web;
 
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.spb.dreamwhite.model.User;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-
 import javax.validation.Valid;
 import java.net.URI;
 
-public class RestRestController {
+@RestController
+@RequestMapping(UserRestController.REST_URL)
+public class UserRestController extends AbstractUserController {
 
-    static final String REST_URL = "";
+    static final String REST_URL = "/users";
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public User get(int id) {
@@ -21,14 +24,14 @@ public class RestRestController {
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@AuthenticationPrincipal AuthorizedUser authUser) {
-        super.delete(authUser.getId());
+    public void delete(int id) {
+        super.delete(id);
     }
 
-    @PostMapping(value = "/register", consumes = PageAttributes.MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public ResponseEntity<User> register(@Valid @RequestBody UserTo userTo) {
-        User created = super.create(userTo);
+    public ResponseEntity<User> save(@Valid @RequestBody User user) {
+        User created = super.create(user);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(REST_URL + "/{id}")
                 .buildAndExpand(created.getId()).toUri();
@@ -38,8 +41,8 @@ public class RestRestController {
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody UserTo userTo, @AuthenticationPrincipal AuthorizedUser authUser) {
-        super.update(userTo, authUser.getId());
+    public void update(@Valid @RequestBody User user, int id) {
+        super.update(user, id);
     }
 
 }

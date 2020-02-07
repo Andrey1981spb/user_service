@@ -1,11 +1,9 @@
 package ru.spb.dreamwhite.util;
 
-import org.slf4j.Logger;
-import ru.spb.dreamwhite.exception.ErrorType;
 import ru.spb.dreamwhite.util.exception.NotFoundException;
 
-import javax;
-import javax.xml.validation.Validator;
+import javax.validation.*;
+import java.util.Set;
 
 public class ValidationUtil {
 
@@ -46,7 +44,9 @@ public class ValidationUtil {
         return e.getLocalizedMessage() != null ? e.getLocalizedMessage() : e.getClass().getName();
     }
 
+    /*
     private static final Validator validator;
+
 
     static {
         //  From Javadoc: implementations are thread-safe and instances are typically cached and reused.
@@ -62,5 +62,7 @@ public class ValidationUtil {
             throw new ConstraintViolationException(violations);
         }
     }
+
+     */
 
 }
