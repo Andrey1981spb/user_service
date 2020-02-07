@@ -1,9 +1,7 @@
 package ru.spb.dreamwhite;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.env.Environment;
 import ru.spb.dreamwhite.web.UserRestController;
 
 import java.util.Arrays;
