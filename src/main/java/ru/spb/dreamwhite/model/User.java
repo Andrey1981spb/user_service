@@ -4,6 +4,10 @@ public class User {
 
     private Integer id;
 
+    private String name;
+
+    private Integer phone;
+
     private String email;
 
     public User() {
@@ -13,8 +17,10 @@ public class User {
         this.email = email;
     }
 
-    public User(Integer id, String email) {
+    public User(Integer id, String name, Integer phone, String email) {
         this.id = id;
+        this.name = name;
+        this.phone = phone;
         this.email = email;
     }
 
@@ -34,10 +40,29 @@ public class User {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
         return "User{" +
                 "id=" + id +
-                ", email=" + email;
+                ", name='" + name + '\'' +
+                ", phone=" + phone +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
