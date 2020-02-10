@@ -17,6 +17,10 @@ public class User {
         this.email = email;
     }
 
+    public User(String name, Integer phone, String email) {
+        this (null, name, phone,email);
+    }
+
     public User(Integer id, String name, Integer phone, String email) {
         this.id = id;
         this.name = name;

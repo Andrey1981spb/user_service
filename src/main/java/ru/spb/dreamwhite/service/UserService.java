@@ -16,7 +16,8 @@ import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 @Service
 public class UserService {
 
-    public UserRepository repository = new InMemoryRepository();
+    @Autowired
+    public UserRepository repository;
 
     public User create(User user) {
         Assert.notNull(user, "user must not be null");

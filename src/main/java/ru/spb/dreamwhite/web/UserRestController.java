@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -17,32 +16,26 @@ public class UserRestController extends AbstractUserController {
 
     static final String REST_URL = "/users";
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public User get(int id) {
+    @GetMapping("/{id}")
+    public User get(@PathVariable int id) {
         return super.get(id);
     }
 
-    @DeleteMapping
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(int id) {
-        super.delete(id);
+    @PostMapping (consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> createUser (@RequestBody User user){
+        User createdUser = super.create(user);
+     //   if (createdUser == null){
+     //       return ResponseEntity.notFound().build();
+      //  } else {
+            URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                    .path(REST_URL + "/{id")
+                    .buildAndExpand(createdUser.getId())
+                    .toUri();
+            return ResponseEntity.created(uri)
+                    .body(createdUser);
+     //   }
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public ResponseEntity<User> save(@Valid @RequestBody User user) {
-        User created = super.create(user);
-        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path(REST_URL + "/{id}")
-                .buildAndExpand(created.getId()).toUri();
 
-        return ResponseEntity.created(uriOfNewResource).body(created);
-    }
-
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody User user, int id) {
-        super.update(user, id);
-    }
 
 }

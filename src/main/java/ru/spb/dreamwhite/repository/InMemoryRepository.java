@@ -6,11 +6,14 @@ import ru.spb.dreamwhite.model.User;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class InMemoryRepository implements UserRepository {
 
     private final Map<Integer, User> testMap = new HashMap<>();
+
+    private AtomicInteger counter = new AtomicInteger(2);
 
     public InMemoryRepository () {
         User testUser = new User(2, "Nick", 89997777, "gmail@gmail.com");
@@ -19,7 +22,10 @@ public class InMemoryRepository implements UserRepository {
 
     @Override
     public User save(User user) {
-        return null;
+        Integer increment = counter.incrementAndGet();
+        user.setId(increment);
+        testMap.putIfAbsent(increment, user);
+        return user;
     }
 
     @Override

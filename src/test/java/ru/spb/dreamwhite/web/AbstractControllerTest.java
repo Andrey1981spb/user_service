@@ -16,6 +16,7 @@ import javax.annotation.PostConstruct;
 
 @SpringJUnitWebConfig(locations = {
         "classpath:spring/spring-app.xml",
+        "classpath:spring/spring-mvc.xml",
 })
 
 abstract public class AbstractControllerTest {
@@ -58,6 +59,10 @@ abstract public class AbstractControllerTest {
 
     protected RequestWrapper doGet(int id) {
         return doGet("{id}", id);
+    }
+
+    protected RequestWrapper doPost() {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.post(url));
     }
 
     public static class RequestWrapper {
