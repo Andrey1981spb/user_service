@@ -18,7 +18,7 @@ public class TemporaryTest {
 
             System.out.println(userRestController.get(2));
 
-            User userFromJSON = new User(null, "Gleb", 354564566, "email@gmail.com");
+            User userFromJSON = new User(null, "Gleb", "354564566", "email@gmail.com");
             System.out.println(userRestController.createUser(userFromJSON));
 
         }

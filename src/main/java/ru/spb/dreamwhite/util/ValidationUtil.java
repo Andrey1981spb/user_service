@@ -47,7 +47,6 @@ public class ValidationUtil {
     /*
     private static final Validator validator;
 
-
     static {
         //  From Javadoc: implementations are thread-safe and instances are typically cached and reused.
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
