@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -22,18 +23,14 @@ public class UserRestController extends AbstractUserController {
     }
 
     @PostMapping (consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser (@RequestBody User user){
+    public ResponseEntity<User> createUser (@Valid @RequestBody User user){
         User createdUser = super.create(user);
-     //   if (createdUser == null){
-     //       return ResponseEntity.notFound().build();
-      //  } else {
             URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                     .path(REST_URL + "/{id")
                     .buildAndExpand(createdUser.getId())
                     .toUri();
             return ResponseEntity.created(uri)
                     .body(createdUser);
-     //   }
     }
 
 

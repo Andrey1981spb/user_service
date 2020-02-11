@@ -1,11 +1,9 @@
 package ru.spb.dreamwhite.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.spb.dreamwhite.model.User;
-import ru.spb.dreamwhite.repository.InMemoryRepository;
 import ru.spb.dreamwhite.repository.UserRepository;
 
 import java.util.List;

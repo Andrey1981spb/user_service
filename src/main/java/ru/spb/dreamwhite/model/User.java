@@ -1,14 +1,26 @@
 package ru.spb.dreamwhite.model;
 
+import ru.spb.dreamwhite.util.ContactNumberConstraint;
+
+@ContactNumberConstraint.List({
+@ContactNumberConstraint(
+        number = "phone",
+        locale = "locale",
+        message = "phone not valid!"
+        )
+})
 public class User {
 
     private Integer id;
 
     private String name;
 
-    private Integer phone;
+  //  @ContactNumberConstraint
+    private String phone;
 
     private String email;
+
+    private String locale;
 
     public User() {
     }
@@ -17,15 +29,16 @@ public class User {
         this.email = email;
     }
 
-    public User(String name, Integer phone, String email) {
-        this (null, name, phone,email);
+    public User(String name, String phone, String email, String locale) {
+        this(null, name, phone, email, locale);
     }
 
-    public User(Integer id, String name, Integer phone, String email) {
+    public User(Integer id, String name, String phone, String email, String locale) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.locale = locale;
     }
 
     public String getEmail() {
@@ -52,12 +65,20 @@ public class User {
         this.name = name;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
     }
 
     @java.lang.Override
@@ -67,6 +88,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", phone=" + phone +
                 ", email='" + email + '\'' +
+                ", locale='" + locale + '\'' +
                 '}';
     }
 }

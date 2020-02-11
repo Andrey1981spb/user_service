@@ -16,7 +16,7 @@ public class InMemoryRepository implements UserRepository {
     private AtomicInteger counter = new AtomicInteger(2);
 
     public InMemoryRepository () {
-        User testUser = new User(2, "Nick", 89997777, "gmail@gmail.com");
+        User testUser = new User(2, "Nick", "89997777", "gmail@gmail.com", "Белорусь");
         testMap.put(2, testUser);
     }
 
