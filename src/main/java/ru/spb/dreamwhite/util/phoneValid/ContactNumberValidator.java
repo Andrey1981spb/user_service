@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util;
+package ru.spb.dreamwhite.util.phoneValid;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -33,8 +33,9 @@ public class ContactNumberValidator implements
         Object localeValue  = new BeanWrapperImpl(contactField)
                 .getPropertyValue(locale);
         String short_code = "";
+        CountryMapAdmin.fillMap();
         if (localeValue!=null) {
-             short_code = CountryShortCodes.getShortCode((String) localeValue);
+             short_code = CountryMapStore.getShortCode((String) localeValue);
         }
         return validateAndFormatPhoneNumber((String) numberValue, short_code);
     }

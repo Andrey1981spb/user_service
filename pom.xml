@@ -76,45 +76,7 @@
 
             <!-- http://stackoverflow.com/questions/4305935/is-it-possible-to-supply-tomcat6s-context-xml-file-via-the-maven-cargo-plugin#4417945 -->
             <!-- https://codehaus-cargo.github.io/cargo/Tomcat+9.x.html -->
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.7.7</version>
-                <configuration>
-                    <container>
-                        <containerId>tomcat9x</containerId>
-                        <systemProperties>
-                            <file.encoding>UTF-8</file.encoding>
-                            <spring.profiles.active>tomcat,datajpa</spring.profiles.active>
-                        </systemProperties>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.postgresql</groupId>
-                                <artifactId>postgresql</artifactId>
-                            </dependency>
-                        </dependencies>
-                    </container>
-                    <configuration>
-                        <configfiles>
-                            <configfile>
-                                <file>src/main/resources/tomcat/context.xml</file>
-                                <todir>conf/Catalina/localhost/</todir>
-                                <tofile>context.xml.default</tofile>
-                            </configfile>
-                        </configfiles>
-                    </configuration>
-                    <deployables>
-                        <deployable>
-                            <groupId>ru.javawebinar</groupId>
-                            <artifactId>topjava</artifactId>
-                            <type>war</type>
-                            <properties>
-                                <context>${project.build.finalName}</context>
-                            </properties>
-                        </deployable>
-                    </deployables>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
 
@@ -144,6 +106,33 @@
             <groupId>com.googlecode.libphonenumber</groupId>
             <artifactId>libphonenumber</artifactId>
             <version>8.11.3</version>
+        </dependency>
+
+        <!-- JDBS -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.2.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${tomcat.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Spring -->

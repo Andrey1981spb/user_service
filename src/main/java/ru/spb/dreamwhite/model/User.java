@@ -1,6 +1,6 @@
 package ru.spb.dreamwhite.model;
 
-import ru.spb.dreamwhite.util.ContactNumberConstraint;
+import ru.spb.dreamwhite.util.phoneValid.ContactNumberConstraint;
 
 @ContactNumberConstraint.List({
 @ContactNumberConstraint(
