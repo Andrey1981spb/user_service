@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util.phoneValid;
+package ru.spb.dreamwhite.repository.country;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

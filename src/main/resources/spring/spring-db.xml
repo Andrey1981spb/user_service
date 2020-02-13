@@ -22,6 +22,7 @@
 
     <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
 
+    <!--
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
@@ -37,12 +38,12 @@
     <bean id="namedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
-
+-->
 
  <context:component-scan base-package="ru.spb.dreamwhite.repository.country"/>
  <jpa:repositories base-package="ru.spb.dreamwhite.repository.country"/>
 
-    <!--
+
      <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
          <property name="staticMethod" value="org.slf4j.bridge.SLF4JBridgeHandler.install" />
      </bean>
@@ -83,5 +84,5 @@
 
      <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
            p:entityManagerFactory-ref="entityManagerFactory"/>
- -->
+
 </beans>
