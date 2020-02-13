@@ -8,6 +8,8 @@ import ru.spb.dreamwhite.repository.country.CountryMapStore;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.logging.Logger;
 
 
@@ -29,16 +31,25 @@ public class ContactNumberValidator implements
 
     @Override
     public boolean isValid(Object contactField, ConstraintValidatorContext constraintValidatorContext) {
-        Object numberValue  = new BeanWrapperImpl(contactField)
+        Object numberValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(number);
-        Object localeValue  = new BeanWrapperImpl(contactField)
+        Object localeValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(locale);
-        String short_code = "";
-        CountryMapAdmin.fillMap();
-        if (localeValue!=null) {
-             short_code = CountryMapStore.getShortCode((String) localeValue);
+        String short_code;
+        Boolean isValid;
+        if ((localeValue != null) & (localeValue != "")) {
+            short_code = CountryMapStore.getShortCode((String) localeValue);
+            isValid = validateAndFormatPhoneNumber((String) numberValue, short_code);
+        } else {
+            Iterator<Map.Entry<String, String>> entries = CountryMapStore.getCountryShortcodes().entrySet().iterator();
+            while (entries.hasNext()) {
+                Map.Entry<String, String> entry = entries.next();
+                Boolean valid = validateAndFormatPhoneNumber((String) numberValue, entry.getValue());
+                if (valid) return valid;
+            }
+            return false;
         }
-        return validateAndFormatPhoneNumber((String) numberValue, short_code);
+        return isValid;
     }
 
     private boolean validateAndFormatPhoneNumber(String inputPhoneNumber, String shortCode) {

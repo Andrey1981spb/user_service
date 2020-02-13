@@ -7,20 +7,16 @@ public class CountryMapStore {
 
     public static  Map<String, String> COUNTRY_SHORTCODES = new LinkedHashMap<>();
 
-    /*
-    static {
-        COUNTRY_SHORTCODES.put("Россия", "RU");
-        COUNTRY_SHORTCODES.put("Беларусь", "BY");
-        COUNTRY_SHORTCODES.put("Казахстан", "KZ");
-    }
-     */
-
     public static String getShortCode(String countryTitle) {
         return COUNTRY_SHORTCODES.get(countryTitle);
     }
 
     public static void setCountryShortcodes(Map<String, String> countryShortcodes) {
         COUNTRY_SHORTCODES.putAll(countryShortcodes);
+    }
+
+    public static Map<String, String> getCountryShortcodes() {
+        return COUNTRY_SHORTCODES;
     }
 
     public static void main(String[] args) {
