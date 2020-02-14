@@ -2,10 +2,7 @@ package ru.spb.dreamwhite.service.country;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 import ru.spb.dreamwhite.model.Country;
-import ru.spb.dreamwhite.model.User;
-import ru.spb.dreamwhite.repository.UserRepository;
 import ru.spb.dreamwhite.repository.country.CountryMapStore;
 import ru.spb.dreamwhite.repository.country.CountryRepository;
 

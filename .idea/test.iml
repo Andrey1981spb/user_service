@@ -3,9 +3,13 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring App" removed="false">
+        <fileset id="web application context" name="MVC application context" removed="true">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-app.xml</file>
         </fileset>
+        <fileset id="web mvc-dispatcher servlet context" name="MVC mvc-dispatcher servlet context" removed="true">
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mvc.xml</file>
+        </fileset>
+        <fileset id="fileset" name="Spring Application Context" removed="false" />
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
@@ -13,7 +17,8 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="test" />
+          <factory-entry name="entityManagerFactory" value="4cb83ea8-f1fb-4f55-82ff-6f16efbf42e7" />
+          <factory-entry name="test" value="4cb83ea8-f1fb-4f55-82ff-6f16efbf42e7" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

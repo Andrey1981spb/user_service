@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import javax.validation.Valid;
 import java.net.URI;
 
-//@RestController
+@RestController
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserRestController extends AbstractUserController {
 

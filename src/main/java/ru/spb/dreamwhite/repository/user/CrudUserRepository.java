@@ -1,11 +1,10 @@
-package ru.spb.dreamwhite.repository;
+package ru.spb.dreamwhite.repository.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.spb.dreamwhite.model.Country;
+import ru.spb.dreamwhite.model.User;
 
-//@Repository
 @Transactional(readOnly = true)
-public interface CrudUserRepository extends JpaRepository<Country, Integer> {
+public interface CrudUserRepository extends JpaRepository<User, Integer> {
 }
