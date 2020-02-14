@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.model;
 
+import org.springframework.stereotype.Component;
 import ru.spb.dreamwhite.util.phoneValid.ContactNumberConstraint;
 
 @ContactNumberConstraint.List({
@@ -9,6 +10,7 @@ import ru.spb.dreamwhite.util.phoneValid.ContactNumberConstraint;
         message = "phone not valid!"
         )
 })
+@Component
 public class User {
 
     private Integer id;

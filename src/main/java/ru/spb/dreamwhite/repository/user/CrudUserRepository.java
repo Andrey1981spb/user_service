@@ -5,6 +5,5 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.spb.dreamwhite.model.User;
 
-@Transactional(readOnly = true)
 public interface CrudUserRepository extends JpaRepository<User, Integer> {
 }
