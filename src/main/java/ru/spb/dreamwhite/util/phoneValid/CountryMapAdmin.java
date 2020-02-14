@@ -5,9 +5,12 @@ import org.springframework.stereotype.Component;
 import ru.spb.dreamwhite.service.country.CountryService;
 
 import javax.annotation.PostConstruct;
+import java.util.logging.Logger;
 
 @Component
 public class CountryMapAdmin {
+
+    private static Logger logger = Logger.getLogger(ContactNumberValidator.class.getName());
 
     @Autowired
   CountryService countryService;
@@ -15,6 +18,7 @@ public class CountryMapAdmin {
     @PostConstruct
     public void fillMap() {
         countryService.getAll();
+        logger.info("CountryMap is successfully filled");
     }
 
 }
