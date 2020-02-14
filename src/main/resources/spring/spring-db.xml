@@ -20,7 +20,7 @@
 
     <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
 
-    <context:component-scan base-package="ru.spb.dreamwhite.**.repository.user" />
+    <context:component-scan base-package="ru.spb.dreamwhite.**.repository" />
 
      <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
          <property name="staticMethod" value="org.slf4j.bridge.SLF4JBridgeHandler.install" />
