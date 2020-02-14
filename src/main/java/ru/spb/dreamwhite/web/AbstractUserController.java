@@ -9,11 +9,11 @@ import ru.spb.dreamwhite.service.UserService;
 
 import java.util.List;
 
-@Controller
+//@Controller
 public abstract class AbstractUserController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
-    @Autowired
+  //  @Autowired
     protected UserService service;
 
     public List<User> getAll() {
