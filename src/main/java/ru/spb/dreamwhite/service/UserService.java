@@ -11,7 +11,7 @@ import java.util.List;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 
-@Service
+//@Service
 public class UserService {
 
     @Autowired

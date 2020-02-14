@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.spb.dreamwhite.model.Country;
 
-@Repository
 @Transactional(readOnly = true)
 public interface CrudCountryRepository extends JpaRepository<Country, Integer> {
 }

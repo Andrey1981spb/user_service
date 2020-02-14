@@ -1,9 +1,11 @@
 package ru.spb.dreamwhite.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
 
 import java.util.List;
 
+@Repository
 public interface UserRepository {
 
     User save(User user);
