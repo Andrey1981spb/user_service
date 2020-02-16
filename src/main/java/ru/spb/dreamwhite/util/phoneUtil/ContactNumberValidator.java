@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util.phoneValid;
+package ru.spb.dreamwhite.util.phoneUtil;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -11,7 +11,6 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Logger;
-
 
 public class ContactNumberValidator implements
         ConstraintValidator<ContactNumberConstraint, Object> {
@@ -62,8 +61,6 @@ public class ContactNumberValidator implements
         try {
             phoneNumberProto = phoneUtil.parse(inputPhoneNumber, shortCode);
 
-            //  logger.info("phoneNumberProto: " + new Gson().toJson(phoneNumberProto));
-
             boolean isValid = phoneUtil.isValidNumber(phoneNumberProto);
             isValidNumber = isValid;
 
@@ -80,15 +77,6 @@ public class ContactNumberValidator implements
             } else {
                 logger.info("National number is not present.");
             }
-
-            String formattedPhoneNumber = phoneUtil.format(phoneNumberProto, PhoneNumberUtil.PhoneNumberFormat.E164);
-
-            if (formattedPhoneNumber.startsWith("+")) {
-                logger.info("Removing leading + from phone number");
-                formattedPhoneNumber = formattedPhoneNumber.replace("+", "");
-            }
-
-            logger.info("Formatted phone number: " + formattedPhoneNumber);
 
         } catch (NumberParseException e) {
             logger.info(e.getMessage());

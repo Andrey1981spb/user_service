@@ -13,11 +13,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/test_local</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="short_codes@localhost" uuid="4cb83ea8-f1fb-4f55-82ff-6f16efbf42e7">
+    <data-source source="LOCAL" name="infostock@localhost" uuid="4cb83ea8-f1fb-4f55-82ff-6f16efbf42e7">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/short_codes</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/infostock</jdbc-url>
     </data-source>
   </component>
 </project>

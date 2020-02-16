@@ -8,6 +8,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:spring/spring-app.xml
+            classpath:spring/spring-db.xml
         </param-value>
     </context-param>
 
@@ -19,6 +20,7 @@
         <servlet-name>mvc-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
+
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring/spring-mvc.xml</param-value>
         </init-param>

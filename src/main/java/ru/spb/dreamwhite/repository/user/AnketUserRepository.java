@@ -6,7 +6,7 @@ import ru.spb.dreamwhite.model.User;
 
 import java.util.List;
 
-//@Repository
+@Repository
 public class AnketUserRepository implements UserRepository {
 
     @Autowired
@@ -14,7 +14,7 @@ public class AnketUserRepository implements UserRepository {
 
     @Override
     public User save(User user) {
-        return null;
+        return crudRepository.save(user);
     }
 
     @Override
@@ -24,11 +24,11 @@ public class AnketUserRepository implements UserRepository {
 
     @Override
     public User get(int id) {
-        return null;
+        return crudRepository.findById(id).orElse(null);
     }
 
     @Override
-    public User getByEmail(String email) {
+    public User getByPhone(String phone) {
         return null;
     }
 
