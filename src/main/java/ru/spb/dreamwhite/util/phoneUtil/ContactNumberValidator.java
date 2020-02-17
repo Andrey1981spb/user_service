@@ -8,7 +8,6 @@ import ru.spb.dreamwhite.repository.country.CountryMapStore;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -23,9 +22,6 @@ public class ContactNumberValidator implements
     private String number;
     private String locale;
 
-    Object numberValue;
-    Object localeValue;
-
     @Override
     public void initialize(ContactNumberConstraint constraintAnnotation) {
         this.number = constraintAnnotation.number();
@@ -33,21 +29,21 @@ public class ContactNumberValidator implements
     }
 
     @Override
-    public boolean isValid(Object contactBean, ConstraintValidatorContext constraintValidatorContext) {
-        numberValue = new BeanWrapperImpl(contactBean)
+    public boolean isValid(Object contactField, ConstraintValidatorContext constraintValidatorContext) {
+        Object numberValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(number);
-        localeValue = new BeanWrapperImpl(contactBean)
+        Object localeValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(locale);
         String short_code;
         Boolean isValid;
         if ((localeValue != null) & (localeValue != "")) {
             short_code = CountryMapStore.getShortCode((String) localeValue);
-            isValid = validateAndFormatPhoneNumber((String) numberValue, short_code, contactBean);
+            isValid = validateAndFormatPhoneNumber((String) numberValue, short_code);
         } else {
             Iterator<Map.Entry<String, String>> entries = CountryMapStore.getCountryShortcodes().entrySet().iterator();
             while (entries.hasNext()) {
                 Map.Entry<String, String> entry = entries.next();
-                Boolean valid = validateAndFormatPhoneNumber((String) numberValue, entry.getValue(), contactBean);
+                Boolean valid = validateAndFormatPhoneNumber((String) numberValue, entry.getValue());
                 if (valid) return valid;
             }
             return false;
@@ -55,7 +51,7 @@ public class ContactNumberValidator implements
         return isValid;
     }
 
-    private boolean validateAndFormatPhoneNumber(String inputPhoneNumber, String shortCode, Object contactBean) {
+    private boolean validateAndFormatPhoneNumber(String inputPhoneNumber, String shortCode) {
 
         logger.info("Processing phone number: " + inputPhoneNumber + " with short code: " + shortCode);
 
@@ -82,17 +78,9 @@ public class ContactNumberValidator implements
                 logger.info("National number is not present.");
             }
 
-            String formattedPhoneNumber = phoneUtil.format(phoneNumberProto, PhoneNumberUtil.PhoneNumberFormat.E164);
 
-            if (formattedPhoneNumber.startsWith("+")) {
-                formattedPhoneNumber = formattedPhoneNumber.replace("+", "");
-            }
 
-            Field phoneField = contactBean.getClass().getDeclaredField("phone");
-            phoneField.set(contactBean, formattedPhoneNumber);
-            phoneField.getName();
-
-        } catch (NumberParseException | NoSuchFieldException | IllegalAccessException e) {
+        } catch (NumberParseException e) {
             logger.info(e.getMessage());
         }
 

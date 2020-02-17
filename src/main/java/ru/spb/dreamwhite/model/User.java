@@ -1,62 +1,57 @@
 package ru.spb.dreamwhite.model;
 
-import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
-import ru.spb.dreamwhite.util.phoneUtil.ContactNumberFormate;
+import ru.spb.dreamwhite.util.phoneUtil.ContactNumberFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
 
-@ContactNumberConstraint.List ( {
-        @ContactNumberConstraint (
-                number = "phone",
-                locale = "locale",
-                message = "phone not valid!"
-        )
-} )
+//@ContactNumberConstraint.List({
+   //     @ContactNumberConstraint(
+     //           number = "phone",
+     //           locale = "locale",
+      //          message = "phone not valid!"
+      //  )
+//})
 @Entity
-@Table ( name = "users" )
+@Table(name = "users")
 public class User {
 
     @Id
-    @SequenceGenerator ( name = "userseq", sequenceName = "userseq", allocationSize = 1 )
-    @GeneratedValue ( strategy = GenerationType.SEQUENCE, generator = "userseq" )
+    @SequenceGenerator(name = "userseq", sequenceName = "userseq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userseq")
     private Integer id;
 
-    @Column ( name = "name", nullable = false )
-    @Size ( max = 100 )
+    @Column(name = "name", nullable = false)
+    @Size(max = 100)
     private String name;
 
-    @Column ( name = "email", nullable = false )
+    @Column(name = "email", nullable = false)
     @Email
-    @Size ( max = 25 )
+    @Size(max = 25)
     private String email;
 
-    //@ContactNumberFormate
-    @Column ( name = "phone", nullable = false, unique = true )
-    @Size ( max = 50 )
+    @ContactNumberFormat
+    @Column(name = "phone", nullable = false, unique = true)
+    @Size(max = 50)
     private String phone;
 
-    @Column ( name = "locale" )
-    @Size ( max = 50 )
+    @Column(name = "locale")
+    @Size(max = 50)
     private String locale;
 
     public User() {
     }
 
-    public User(String email) {
-        this.email = email;
+    public User(User u) {
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale());
     }
 
-    public User(String name, String phone, String email, String locale) {
-        this(null, name, phone, email, locale);
-    }
-
-    public User(Integer id, String name, String phone, String email, String locale) {
+    public User(Integer id, String name, String email, String phone, String locale) {
         this.id = id;
         this.name = name;
-        this.phone = phone;
         this.email = email;
+        this.phone = phone;
         this.locale = locale;
     }
 

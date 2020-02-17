@@ -63,6 +63,16 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
           p:entityManagerFactory-ref="entityManagerFactory"/>
 
+
+    <bean id="applicationConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatterRegistrars">
+            <set>
+                <ref bean="applicationFormatterRegistrar"/>
+            </set>
+        </property>
+    </bean>
+    <bean id="applicationFormatterRegistrar" class="ru.spb.dreamwhite.util.phoneUtil.ApplicationFormatterRegister"/>
+
 </beans>
 
 

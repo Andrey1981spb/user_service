@@ -1,60 +1,33 @@
 package ru.spb.dreamwhite.util.phoneUtil;
 
-import com.google.i18n.phonenumbers.NumberParseException;
-import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.google.i18n.phonenumbers.Phonenumber;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.format.Formatter;
+import ru.spb.dreamwhite.model.User;
 
-import java.lang.reflect.Field;
+import java.text.ParseException;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-@Component
-public class PhoneFormatter implements BeanPostProcessor {
-
-    private Object beanIs;
-
-    private PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
+public class PhoneFormatter implements Formatter<String> {
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String s) throws BeansException {
-        if (bean.getClass().isAnnotationPresent(ContactNumberFormate.class)) {
-            beanIs = bean.getClass();
-        }
-        return bean;
+    public String parse(String phoneNum, Locale locale) throws ParseException {
+        return this.formate(phoneNum);
     }
 
     @Override
-    public Object postProcessAfterInitialization(Object bean, String s) throws BeansException {
-        String phone = "";
-        String locale = "";
-        /*
-        try {
-            phone = (String) beanIs.getClass().getDeclaredField("phone").get(bean);
-            locale = (String) beanIs.getClass().getDeclaredField("locale").get(bean);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        Phonenumber.PhoneNumber phoneNumberProto = null;
-        try {
-            phoneNumberProto = phoneUtil.parse(phone, locale);
-        } catch (NumberParseException e) {
-            e.printStackTrace();
-        }
-        String formattedPhoneNumber = phoneUtil.format(phoneNumberProto, PhoneNumberUtil.PhoneNumberFormat.E164);
-
-        if (formattedPhoneNumber.startsWith("+")) {
-            formattedPhoneNumber = formattedPhoneNumber.replace("+", "");
-        }
-
-
-
-        return formattedPhoneNumber;
-
-         */
-        return null;
+    public String print(String phone, Locale locale) {
+        return this.formate(phone);
     }
+
+    private String formate(String text){
+        text = text.trim();
+        String regex = "^\\(?(\\+*1)?[-.\\s*]?([0-9]{3})\\)?[-.\\s*]?([0-9]{3})[-.\\s*]?([0-9]{4})$";
+        Matcher matcher = Pattern.compile(regex).matcher(text);
+        User user = new User();
+        user.setPhone(matcher.toString());
+        return matcher.toString();
+    }
+
 
 }

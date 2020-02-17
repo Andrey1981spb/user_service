@@ -1,6 +1,5 @@
 package ru.spb.dreamwhite;
 
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
 
 import java.util.List;
