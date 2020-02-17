@@ -29,6 +29,7 @@ public class PhoneFormatter implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String s) throws BeansException {
         String phone = "";
         String locale = "";
+        /*
         try {
             phone = (String) beanIs.getClass().getDeclaredField("phone").get(bean);
             locale = (String) beanIs.getClass().getDeclaredField("locale").get(bean);
@@ -48,7 +49,12 @@ public class PhoneFormatter implements BeanPostProcessor {
             formattedPhoneNumber = formattedPhoneNumber.replace("+", "");
         }
 
+
+
         return formattedPhoneNumber;
+
+         */
+        return null;
     }
 
 }

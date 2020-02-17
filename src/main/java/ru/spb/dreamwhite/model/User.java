@@ -32,7 +32,7 @@ public class User {
     @Size ( max = 25 )
     private String email;
 
-    @ContactNumberFormate
+    //@ContactNumberFormate
     @Column ( name = "phone", nullable = false, unique = true )
     @Size ( max = 50 )
     private String phone;
