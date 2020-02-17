@@ -5,6 +5,7 @@ import ru.spb.dreamwhite.model.User;
 
 import java.util.List;
 
+@Repository
 public interface UserRepository {
 
     User save(User user);
@@ -16,7 +17,7 @@ public interface UserRepository {
     User get(int id);
 
     // null if not found
-    User getByEmail(String email);
+    User getByPhone(String phone);
 
     List<User> getAll();
 

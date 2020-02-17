@@ -1,6 +1,7 @@
 package ru.spb.dreamwhite.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.spb.dreamwhite.model.User;
@@ -11,13 +12,13 @@ import java.util.List;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 
-@Service
+@Service("userService")
 public class UserService {
 
-    private final UserRepository repository;
+    private UserRepository repository;
 
     @Autowired
-    public UserService (UserRepository repository){
+    public UserService (@Qualifier ( "anketUserRepository" ) UserRepository repository){
         this.repository = repository;
     }
 
@@ -34,9 +35,9 @@ public class UserService {
         return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public User getByEmail(String email) {
-        Assert.notNull(email, "email must not be null");
-        return checkNotFound(repository.getByEmail(email), "email=" + email);
+    public User getByPhone(String phone) {
+        Assert.notNull(phone, "phone must not be null");
+        return checkNotFound(repository.getByPhone(phone), "phone=" + phone);
     }
 
     public List<User> getAll() {

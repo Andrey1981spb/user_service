@@ -10,10 +10,10 @@ import java.util.List;
 public class CountryRepository {
 
     @Autowired
-    private CrudCountryRepository crudRepository;
+    private CrudCountryRepository crudCountryRepository;
 
     public List<Country> getAll() {
-        return crudRepository.findAll();
+        return crudCountryRepository.findAll();
     }
 
 }

@@ -1,27 +1,44 @@
 package ru.spb.dreamwhite.model;
 
-import org.springframework.stereotype.Component;
-import ru.spb.dreamwhite.util.phoneValid.ContactNumberConstraint;
+import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
+import ru.spb.dreamwhite.util.phoneUtil.ContactNumberFormate;
 
-@ContactNumberConstraint.List({
-@ContactNumberConstraint(
-        number = "phone",
-        locale = "locale",
-        message = "phone not valid!"
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+
+@ContactNumberConstraint.List ( {
+        @ContactNumberConstraint (
+                number = "phone",
+                locale = "locale",
+                message = "phone not valid!"
         )
-})
-@Component
+} )
+@Entity
+@Table ( name = "users" )
 public class User {
 
+    @Id
+    @SequenceGenerator ( name = "userseq", sequenceName = "userseq", allocationSize = 1 )
+    @GeneratedValue ( strategy = GenerationType.SEQUENCE, generator = "userseq" )
     private Integer id;
 
+    @Column ( name = "name", nullable = false )
+    @Size ( max = 100 )
     private String name;
 
-  //  @ContactNumberConstraint
-    private String phone;
-
+    @Column ( name = "email", nullable = false )
+    @Email
+    @Size ( max = 25 )
     private String email;
 
+    @ContactNumberFormate
+    @Column ( name = "phone", nullable = false, unique = true )
+    @Size ( max = 50 )
+    private String phone;
+
+    @Column ( name = "locale" )
+    @Size ( max = 50 )
     private String locale;
 
     public User() {

@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util.phoneValid;
+package ru.spb.dreamwhite.util.phoneUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ public class CountryMapAdmin {
     private static Logger logger = Logger.getLogger(ContactNumberValidator.class.getName());
 
     @Autowired
-  CountryService countryService;
+    CountryService countryService;
 
     @PostConstruct
     public void fillMap() {

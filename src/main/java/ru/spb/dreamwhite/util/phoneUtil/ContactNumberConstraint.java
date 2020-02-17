@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util.phoneValid;
+package ru.spb.dreamwhite.util.phoneUtil;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
