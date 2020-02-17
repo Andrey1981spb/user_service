@@ -11,12 +11,12 @@ import java.util.List;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 
-//@Service
+@Service
 public class UserService {
 
     private final UserRepository repository;
 
-   // @Autowired
+    @Autowired
     public UserService (UserRepository repository){
         this.repository = repository;
     }

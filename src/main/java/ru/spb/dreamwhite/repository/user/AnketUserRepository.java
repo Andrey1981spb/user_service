@@ -6,7 +6,7 @@ import ru.spb.dreamwhite.model.User;
 
 import java.util.List;
 
-//@Repository
+@Repository
 public class AnketUserRepository implements UserRepository {
 
     @Autowired

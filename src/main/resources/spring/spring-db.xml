@@ -18,53 +18,51 @@
     </jdbc:initialize-database>
     -->
 
-    <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
-
-    <context:component-scan base-package="ru.spb.dreamwhite.repository.country.CountryRepository" />
-    <jpa:repositories base-package="ru.spb.dreamwhite.repository.country.CrudCountryRepository"/>
-
-     <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
-         <property name="staticMethod" value="org.slf4j.bridge.SLF4JBridgeHandler.install" />
-     </bean>
-
-     <bean id="dataSource"
-           class="org.apache.tomcat.jdbc.pool.DataSource"
-           p:driverClassName="org.postgresql.Driver"
-           p:url="${database.url}"
-           p:username="${database.username}"
-           p:password="${database.password}"/>
-
-     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-           p:dataSource-ref="dataSource"
-           p:packagesToScan="ru.spb.dreamwhite.**.model">
-
-         <property name="jpaPropertyMap">
-             <map>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}" value="${hibernate.use_sql_comments}"/>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).JPA_PROXY_COMPLIANCE}" value="false"/>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>
-
-
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).CACHE_REGION_FACTORY}" value="org.hibernate.cache.jcache.internal.JCacheRegionFactory"/>
-                 <entry key="#{T(org.hibernate.cache.jcache.ConfigSettings).PROVIDER}" value="org.ehcache.jsr107.EhcacheCachingProvider"/>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SECOND_LEVEL_CACHE}" value="true"/>
-                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_QUERY_CACHE}" value="false"/>
-             </map>
-         </property>
-
-         <property name="jpaVendorAdapter">
-             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" p:showSql="${jpa.showSql}">
-             </bean>
-         </property>
-     </bean>
-
     <tx:annotation-driven/>
 
-     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
-           p:entityManagerFactory-ref="entityManagerFactory"/>
+    <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
+
+
+    <jpa:repositories base-package="ru.spb.dreamwhite.repository.user"/>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
+        <property name="staticMethod" value="org.slf4j.bridge.SLF4JBridgeHandler.install" />
+    </bean>
+
+    <bean id="dataSource"
+          class="org.apache.tomcat.jdbc.pool.DataSource"
+          p:driverClassName="org.postgresql.Driver"
+          p:url="${database.url}"
+          p:username="${database.username}"
+          p:password="${database.password}"/>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:packagesToScan="ru.spb.dreamwhite.**.model">
+
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}" value="${hibernate.use_sql_comments}"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).JPA_PROXY_COMPLIANCE}" value="false"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>
+
+
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).CACHE_REGION_FACTORY}" value="org.hibernate.cache.jcache.internal.JCacheRegionFactory"/>
+                <entry key="#{T(org.hibernate.cache.jcache.ConfigSettings).PROVIDER}" value="org.ehcache.jsr107.EhcacheCachingProvider"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SECOND_LEVEL_CACHE}" value="true"/>
+                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_QUERY_CACHE}" value="false"/>
+            </map>
+        </property>
+
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" p:showSql="${jpa.showSql}">
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+          p:entityManagerFactory-ref="entityManagerFactory"/>
 
 </beans>
-
-
-

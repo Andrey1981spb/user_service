@@ -33,6 +33,4 @@ public class UserRestController extends AbstractUserController {
                     .body(createdUser);
     }
 
-
-
 }
