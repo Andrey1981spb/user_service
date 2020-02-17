@@ -12,7 +12,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import ru.spb.dreamwhite.TimingExtension;
-import ru.spb.dreamwhite.service.country.CountryService;
 import ru.spb.dreamwhite.web.json.JsonUtil;
 
 import javax.annotation.PostConstruct;
@@ -41,9 +40,6 @@ abstract public class AbstractControllerTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    @Autowired
-    CountryService countryService;
-
     public AbstractControllerTest(String url) {
         this.url = url + '/';
     }
@@ -68,12 +64,32 @@ abstract public class AbstractControllerTest {
         return RequestWrapper.wrap(MockMvcRequestBuilders.get(url + urlTemplatePad, uriVars));
     }
 
+    protected RequestWrapper doGet() {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.get(url));
+    }
+
     protected RequestWrapper doGet(int id) {
         return doGet("{id}", id);
     }
 
     protected RequestWrapper doPost() {
         return RequestWrapper.wrap(MockMvcRequestBuilders.post(url));
+    }
+
+    protected RequestWrapper doDelete() {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.delete(url));
+    }
+
+    protected RequestWrapper doDelete(int id) {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.delete(url + "{id}", id));
+    }
+
+    protected RequestWrapper doPut() {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.put(url));
+    }
+
+    protected RequestWrapper doPut(int id) {
+        return RequestWrapper.wrap(MockMvcRequestBuilders.put(url + "{id}", id));
     }
 
     public static class RequestWrapper {

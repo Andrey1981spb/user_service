@@ -1,6 +1,7 @@
 package ru.spb.dreamwhite.repository.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
 
@@ -8,6 +9,8 @@ import java.util.List;
 
 @Repository
 public class AnketUserRepository implements UserRepository {
+
+    private static final Sort SORT_NAME = Sort.by(Sort.Direction.ASC, "name");
 
     @Autowired
     private CrudUserRepository crudRepository;
@@ -19,7 +22,7 @@ public class AnketUserRepository implements UserRepository {
 
     @Override
     public boolean delete(int id) {
-        return false;
+        return crudRepository.delete(id) != 0;
     }
 
     @Override
@@ -29,11 +32,11 @@ public class AnketUserRepository implements UserRepository {
 
     @Override
     public User getByPhone(String phone) {
-        return null;
+        return crudRepository.getByPhone(phone);
     }
 
     @Override
     public List<User> getAll() {
-        return null;
+        return crudRepository.findAll(SORT_NAME);
     }
 }

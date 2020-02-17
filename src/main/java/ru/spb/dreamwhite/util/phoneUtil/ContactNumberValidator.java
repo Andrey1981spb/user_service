@@ -78,6 +78,8 @@ public class ContactNumberValidator implements
                 logger.info("National number is not present.");
             }
 
+
+
         } catch (NumberParseException e) {
             logger.info(e.getMessage());
         }
