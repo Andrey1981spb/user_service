@@ -19,4 +19,6 @@ public interface CrudUserRepository extends JpaRepository<User, Integer> {
 
     User getByPhone (String phone);
 
+    User getByEmail (String email);
+
 }

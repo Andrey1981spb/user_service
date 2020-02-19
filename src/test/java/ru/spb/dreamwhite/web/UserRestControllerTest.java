@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import ru.spb.dreamwhite.TestData;
 import ru.spb.dreamwhite.TestUtil;
@@ -16,6 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.spb.dreamwhite.TestData.*;
+import static ru.spb.dreamwhite.TestUtil.contentJson;
+import static ru.spb.dreamwhite.web.UserRestController.REST_URL;
 
 public class UserRestControllerTest extends AbstractControllerTest {
 
@@ -23,7 +26,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
     private UserService userService;
 
     UserRestControllerTest() {
-        super(UserRestController.REST_URL);
+        super(REST_URL);
     }
 
     @Test
@@ -71,6 +74,14 @@ public class UserRestControllerTest extends AbstractControllerTest {
                 .andExpect(status().isNoContent());
 
         USER_MATCHERS.assertMatch(userService.get(USER_ID), updated);
+    }
+
+    @Test
+    void getByEmail() throws Exception {
+        perform(MockMvcRequestBuilders.get(REST_URL + "byEmail?email=" + USER.getEmail()))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(contentJson(USER));
     }
 
 }

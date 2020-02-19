@@ -4,25 +4,26 @@ import org.springframework.format.AnnotationFormatterFactory;
 import org.springframework.format.Parser;
 import org.springframework.format.Printer;
 
-import java.util.HashSet;
+import java.io.Serializable;
+import java.util.Collections;
 import java.util.Set;
 
-public class PhoneFormatAnnotationFormatterFactory implements AnnotationFormatterFactory<ContactNumberFormat> {
+public class PhoneFormatAnnotationFormatterFactory implements AnnotationFormatterFactory<ContactNumberFormat>, Serializable {
     @Override
     public Set<Class<?>> getFieldTypes() {
-        //  return Collections.<Class<?>>singleton(String.class);
-        Set<Class<?>> setTypes = new HashSet<Class<?>>();
-        setTypes.add(String.class);
-        return setTypes;
+        return Collections.singleton(String.class);
+      //  Set<Class<?>> fieldTypes = new HashSet<Class<?>>();
+     //   fieldTypes.add(String.class);
+      //  return fieldTypes;
     }
 
     @Override
-    public Printer<?> getPrinter(ContactNumberFormat contactNumberFormat, Class<?> aClass) {
+    public Parser<?> getParser(ContactNumberFormat contactNumberFormat, Class<?> fieldType) {
         return new PhoneFormatter();
     }
 
     @Override
-    public Parser<?> getParser(ContactNumberFormat contactNumberFormat, Class<?> aClass) {
+    public Printer<?> getPrinter(ContactNumberFormat contactNumberFormat, Class<?> fieldType) {
         return new PhoneFormatter();
     }
 

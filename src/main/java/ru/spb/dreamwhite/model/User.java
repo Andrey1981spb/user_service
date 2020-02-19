@@ -1,18 +1,18 @@
 package ru.spb.dreamwhite.model;
 
-import ru.spb.dreamwhite.util.phoneUtil.ContactNumberFormat;
+import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
 
-//@ContactNumberConstraint.List({
-   //     @ContactNumberConstraint(
-     //           number = "phone",
-     //           locale = "locale",
-      //          message = "phone not valid!"
-      //  )
-//})
+@ContactNumberConstraint.List({
+        @ContactNumberConstraint(
+                number = "phone",
+                locale = "locale",
+                message = "phone not valid!"
+        )
+})
 @Entity
 @Table(name = "users")
 public class User {
@@ -31,7 +31,7 @@ public class User {
     @Size(max = 25)
     private String email;
 
-    @ContactNumberFormat
+  //  @ContactNumberFormat
     @Column(name = "phone", nullable = false, unique = true)
     @Size(max = 50)
     private String phone;

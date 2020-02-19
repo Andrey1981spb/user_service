@@ -53,9 +53,14 @@ public class UserRestController extends AbstractUserController {
         super.update(user, id);
     }
 
-    @GetMapping("/by")
+    @GetMapping("/byPhone")
     public User getByPhone(@RequestParam String phone) {
         return super.getByPhone(phone);
+    }
+
+    @GetMapping("/byEmail")
+    public User getByEmail(@RequestParam String email) {
+        return super.getByEmail(email);
     }
 
 }

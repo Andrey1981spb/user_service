@@ -2,9 +2,6 @@ package ru.spb.dreamwhite;
 
 import ru.spb.dreamwhite.model.User;
 
-import java.util.Collections;
-import java.util.Date;
-
 public class TestData {
 
     public static final int USER_ID = 34;

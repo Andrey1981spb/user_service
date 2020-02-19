@@ -42,8 +42,13 @@ public abstract class AbstractUserController {
     }
 
     public User getByPhone(String phone) {
-        log.info("getByEmail {}", phone);
+        log.info("getByPhone {}", phone);
         return service.getByPhone(phone);
+    }
+
+    public User getByEmail(String email) {
+        log.info("getByEmail {}", email);
+        return service.getByEmail(email);
     }
 
 }

@@ -36,6 +36,11 @@ public class AnketUserRepository implements UserRepository {
     }
 
     @Override
+    public User getByEmail(String email) {
+        return crudRepository.getByEmail(email);
+    }
+
+    @Override
     public List<User> getAll() {
         return crudRepository.findAll(SORT_NAME);
     }
