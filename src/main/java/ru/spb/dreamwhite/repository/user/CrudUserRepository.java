@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.spb.dreamwhite.model.User;
 
+import java.util.List;
+
 @Repository
 @Transactional(readOnly = true)
 public interface CrudUserRepository extends JpaRepository<User, Integer> {
@@ -17,8 +19,8 @@ public interface CrudUserRepository extends JpaRepository<User, Integer> {
     @Query ("DELETE FROM User u WHERE u.id=:id")
     int delete (@Param("id") int id);
 
-    User getByPhone (String phone);
+    List<User> getByPhone (String phone);
 
-    User getByEmail (String email);
+    List<User> getByEmail (String email);
 
 }

@@ -31,12 +31,12 @@ public class AnketUserRepository implements UserRepository {
     }
 
     @Override
-    public User getByPhone(String phone) {
+    public List<User> getByPhone(String phone) {
         return crudRepository.getByPhone(phone);
     }
 
     @Override
-    public User getByEmail(String email) {
+    public List<User> getByEmail(String email) {
         return crudRepository.getByEmail(email);
     }
 

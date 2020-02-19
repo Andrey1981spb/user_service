@@ -38,12 +38,12 @@ public class UserService {
         return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public User getByPhone(String phone) {
+    public List<User> getByPhone(String phone) {
         Assert.notNull(phone, "phone must not be null");
         return checkNotFound(repository.getByPhone(phone), "phone=" + phone);
     }
 
-    public User getByEmail(String email) {
+    public List<User> getByEmail(String email) {
         Assert.notNull(email, "email must not be null");
         return checkNotFound(repository.getByEmail(email), "email=" + email);
     }

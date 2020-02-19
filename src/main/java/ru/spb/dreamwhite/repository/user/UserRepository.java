@@ -17,10 +17,10 @@ public interface UserRepository {
     User get(int id);
 
     // null if not found
-    User getByPhone(String phone);
+    List<User> getByPhone(String phone);
 
     // null if not found
-    User getByEmail(String phone);
+    List<User> getByEmail(String phone);
 
     List<User> getAll();
 

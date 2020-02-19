@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.web;
 
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.spb.dreamwhite.model.User;
@@ -7,36 +8,43 @@ import ru.spb.dreamwhite.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import ru.spb.dreamwhite.util.phoneUtil.ContactNumberValidator;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserRestController extends AbstractUserController {
 
-    static final String REST_URL = "/users";
+    private static Logger logger = Logger.getLogger(UserRestController.class.getName());
 
-    @GetMapping
-    public List<User> getAll() {
-        return super.getAll();
-    }
+    static final String REST_URL = "/customers";
+
+    // @GetMapping
+    // public List<User> getAll() {
+    //     return super.getAll();
+    // }
 
     @GetMapping("/{id}")
     public User get(@PathVariable int id) {
         return super.get(id);
     }
 
-    @PostMapping (consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser (@Valid @RequestBody User user){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User createdUser = super.create(user);
-            URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                    .path(REST_URL + "/{id")
-                    .buildAndExpand(createdUser.getId())
-                    .toUri();
-            return ResponseEntity.created(uri)
-                    .body(createdUser);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path(REST_URL + "/{id")
+                .buildAndExpand(createdUser.getId())
+                .toUri();
+        return ResponseEntity.created(uri)
+                .body(createdUser);
     }
 
     @Override
@@ -53,14 +61,20 @@ public class UserRestController extends AbstractUserController {
         super.update(user, id);
     }
 
-    @GetMapping("/byPhone")
-    public User getByPhone(@RequestParam String phone) {
-        return super.getByPhone(phone);
-    }
+    @GetMapping
+    public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) {
+        List<User> userList = null;
 
-    @GetMapping("/byEmail")
-    public User getByEmail(@RequestParam String email) {
-        return super.getByEmail(email);
+        for (Map.Entry<String, String> entry : parameters.entrySet()) {
+            String value = entry.getKey();
+            if (value.equals("email")){
+                userList = super.getByEmail(entry.getValue());
+            } else if (value.equals("phone")){
+                userList = super.getByPhone(entry.getValue());
+            }
+        }
+
+        return userList;
     }
 
 }

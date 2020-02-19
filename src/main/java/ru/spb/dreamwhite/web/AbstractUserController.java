@@ -41,12 +41,12 @@ public abstract class AbstractUserController {
         service.update(user);
     }
 
-    public User getByPhone(String phone) {
+    public List<User> getByPhone(String phone) {
         log.info("getByPhone {}", phone);
         return service.getByPhone(phone);
     }
 
-    public User getByEmail(String email) {
+    public List<User> getByEmail(String email) {
         log.info("getByEmail {}", email);
         return service.getByEmail(email);
     }
