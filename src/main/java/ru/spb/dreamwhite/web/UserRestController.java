@@ -1,6 +1,5 @@
 package ru.spb.dreamwhite.web;
 
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.spb.dreamwhite.model.User;
@@ -8,15 +7,18 @@ import ru.spb.dreamwhite.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import ru.spb.dreamwhite.util.phoneUtil.ContactNumberValidator;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.util.ArrayList;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.logging.Logger;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 @RestController
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -62,19 +64,18 @@ public class UserRestController extends AbstractUserController {
     }
 
     @GetMapping
-    public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) {
-        List<User> userList = null;
-
-        for (Map.Entry<String, String> entry : parameters.entrySet()) {
-            String value = entry.getKey();
-            if (value.equals("email")){
-                userList = super.getByEmail(entry.getValue());
-            } else if (value.equals("phone")){
-                userList = super.getByPhone(entry.getValue());
-            }
+    public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException {
+        List<User> userList;
+        if (parameters.get("phone").equals(null)) {
+            userList = super.getByParameterOrAll(parameters);
+        } else {
+            String encodedValue = URLEncoder.encode((parameters.get("phone")), StandardCharsets.UTF_8.toString());
+            parameters.put("phone", encodedValue);
+            userList = super.getByParameterOrAll(parameters);
         }
-
         return userList;
     }
 
 }
+
+

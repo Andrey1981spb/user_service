@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface UserRepository {
@@ -16,12 +17,10 @@ public interface UserRepository {
     // null if not found
     User get(int id);
 
-    // null if not found
-    List<User> getByPhone(String phone);
-
-    // null if not found
-    List<User> getByEmail(String phone);
-
+    /*
     List<User> getAll();
+     */
+
+    List<User> getByParameterOrAll(Map<String, String> paramsMap);
 
 }

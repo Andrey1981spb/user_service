@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.service.UserService;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public abstract class AbstractUserController {
@@ -15,11 +17,6 @@ public abstract class AbstractUserController {
 
     @Autowired
     protected UserService service;
-
-    public List<User> getAll() {
-        log.info("getAll");
-        return service.getAll();
-    }
 
     public User get(int id) {
         log.info("get {}", id);
@@ -41,14 +38,15 @@ public abstract class AbstractUserController {
         service.update(user);
     }
 
-    public List<User> getByPhone(String phone) {
-        log.info("getByPhone {}", phone);
-        return service.getByPhone(phone);
+    /*
+    public List<User> getAll() {
+        log.info("getAll");
+        return service.getAll();
     }
+     */
 
-    public List<User> getByEmail(String email) {
-        log.info("getByEmail {}", email);
-        return service.getByEmail(email);
+    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws UnsupportedEncodingException {
+        return service.getByParameterOrAll(paramsMap);
     }
 
 }

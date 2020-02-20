@@ -1,6 +1,5 @@
 package ru.spb.dreamwhite.service;
 
-import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -10,6 +9,7 @@ import ru.spb.dreamwhite.repository.user.UserRepository;
 import ru.spb.dreamwhite.util.Formatter;
 
 import java.util.List;
+import java.util.Map;
 
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
@@ -38,18 +38,14 @@ public class UserService {
         return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public List<User> getByPhone(String phone) {
-        Assert.notNull(phone, "phone must not be null");
-        return checkNotFound(repository.getByPhone(phone), "phone=" + phone);
-    }
-
-    public List<User> getByEmail(String email) {
-        Assert.notNull(email, "email must not be null");
-        return checkNotFound(repository.getByEmail(email), "email=" + email);
-    }
-
+    /*
     public List<User> getAll() {
         return repository.getAll();
+    }
+     */
+
+    public List<User> getByParameterOrAll(Map<String, String> paramsMap){
+        return repository.getByParameterOrAll(paramsMap);
     }
 
     public void update(User user) {

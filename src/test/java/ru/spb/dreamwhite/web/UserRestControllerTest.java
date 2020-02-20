@@ -77,11 +77,12 @@ public class UserRestControllerTest extends AbstractControllerTest {
     }
 
     @Test
-    void getByEmail() throws Exception {
-        perform(MockMvcRequestBuilders.get(REST_URL + "byEmail?email=" + USER.getEmail()))
+    void getByParametersOrAll() throws Exception {
+        perform(MockMvcRequestBuilders.get(REST_URL + "?phone=+78122347391"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(contentJson(USER));
+                .andExpect(contentJson(USER3));
     }
+
 
 }
