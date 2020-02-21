@@ -1,7 +1,5 @@
 package ru.spb.dreamwhite.util.exception;
 
-import ru.spb.dreamwhite.exception.ErrorType;
-
 public class NotFoundException extends ApplicationException {
 
     public static final String NOT_FOUND_EXCEPTION = "exception.common.notFound";

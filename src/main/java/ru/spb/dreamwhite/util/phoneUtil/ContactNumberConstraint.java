@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 public @interface ContactNumberConstraint {
     String message() default "Invalid phone number";
     String number();
-    String locale();
+    String sh();
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

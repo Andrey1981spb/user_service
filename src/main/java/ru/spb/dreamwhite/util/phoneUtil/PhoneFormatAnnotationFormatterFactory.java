@@ -12,9 +12,6 @@ public class PhoneFormatAnnotationFormatterFactory implements AnnotationFormatte
     @Override
     public Set<Class<?>> getFieldTypes() {
         return Collections.singleton(String.class);
-      //  Set<Class<?>> fieldTypes = new HashSet<Class<?>>();
-     //   fieldTypes.add(String.class);
-      //  return fieldTypes;
     }
 
     @Override

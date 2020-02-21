@@ -20,12 +20,12 @@ public class ContactNumberValidator implements
     private PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
 
     private String number;
-    private String locale;
+    private String short_code;
 
     @Override
     public void initialize(ContactNumberConstraint constraintAnnotation) {
         this.number = constraintAnnotation.number();
-        this.locale = constraintAnnotation.locale();
+        this.short_code = constraintAnnotation.sh();
     }
 
     @Override
@@ -33,17 +33,16 @@ public class ContactNumberValidator implements
         Object numberValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(number);
         Object localeValue = new BeanWrapperImpl(contactField)
-                .getPropertyValue(locale);
-        String short_code;
+                .getPropertyValue(short_code);
         Boolean isValid;
         if ((localeValue != null) & (localeValue != "")) {
-            short_code = CountryMapStore.getShortCode((String) localeValue);
-            isValid = validateAndFormatPhoneNumber((String) numberValue, short_code);
+            isValid = validateAndFormatPhoneNumber((String) numberValue, (String) localeValue);
         } else {
             Iterator<Map.Entry<String, String>> entries = CountryMapStore.getCountryShortcodes().entrySet().iterator();
             while (entries.hasNext()) {
                 Map.Entry<String, String> entry = entries.next();
-                Boolean valid = validateAndFormatPhoneNumber((String) numberValue, entry.getValue());
+                Boolean valid;
+                valid = validateAndFormatPhoneNumber((String) numberValue, entry.getValue());
                 if (valid) return valid;
             }
             return false;
@@ -61,10 +60,11 @@ public class ContactNumberValidator implements
         try {
             phoneNumberProto = phoneUtil.parse(inputPhoneNumber, shortCode);
 
-            boolean isValid = phoneUtil.isValidNumber(phoneNumberProto);
-            isValidNumber = isValid;
+            boolean isValid;
 
-            logger.info("Is phone number valid: " + isValid);
+            isValid = phoneUtil.isValidNumber(phoneNumberProto);
+
+            isValidNumber = isValid;
 
             if (phoneNumberProto.hasCountryCode()) {
                 logger.info("Country code is present: " + phoneNumberProto.getCountryCode());
@@ -77,7 +77,6 @@ public class ContactNumberValidator implements
             } else {
                 logger.info("National number is not present.");
             }
-
 
 
         } catch (NumberParseException e) {

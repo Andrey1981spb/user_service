@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestData {
 
-    public static final int USER_ID = 34;
+    public static final int USER_ID = 59;
 
     public static final User USER = new User(59, "Alex2", "tmail@gmail.com", "+78122347390", "Россия");
     public static final User USER2 = new User(60, "Alex2", "gmail@gmail.com ", "+78122347391", "Россия");

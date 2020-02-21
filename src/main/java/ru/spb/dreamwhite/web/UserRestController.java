@@ -8,18 +8,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 @RestController
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -28,11 +24,6 @@ public class UserRestController extends AbstractUserController {
     private static Logger logger = Logger.getLogger(UserRestController.class.getName());
 
     static final String REST_URL = "/customers";
-
-    // @GetMapping
-    // public List<User> getAll() {
-    //     return super.getAll();
-    // }
 
     @GetMapping("/{id}")
     public User get(@PathVariable int id) {
@@ -67,7 +58,7 @@ public class UserRestController extends AbstractUserController {
     @GetMapping
     public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException {
         List<User> userList;
-        if (parameters.get("phone")==null) {
+        if (parameters.get("phone") == null) {
             userList = super.getByParameterOrAll(parameters);
         } else {
             String encodedValue = URLEncoder.encode((parameters.get("phone")), StandardCharsets.UTF_8.toString());

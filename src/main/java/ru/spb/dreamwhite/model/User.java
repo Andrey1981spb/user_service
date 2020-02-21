@@ -9,7 +9,7 @@ import javax.validation.constraints.Email;
 @ContactNumberConstraint.List({
         @ContactNumberConstraint(
                 number = "phone",
-                locale = "locale",
+                sh = "short_code",
                 message = "phone not valid!"
         )
 })
@@ -40,19 +40,24 @@ public class User {
     @Size(max = 50)
     private String locale;
 
+    @Column(name = "short_code")
+    @Size(max=4)
+    private String short_code;
+
     public User() {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale) {
+    public User(Integer id, String name, String email, String phone, String locale, String short_code) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.locale = locale;
+        this.short_code = short_code;
     }
 
     public String getEmail() {
@@ -95,14 +100,23 @@ public class User {
         this.locale = locale;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public String getShort_code() {
+        return short_code;
+    }
+
+    public void setShort_code(String short_code) {
+        this.short_code = short_code;
+    }
+
+    @Override
+    public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", phone=" + phone +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", locale='" + locale + '\'' +
+                ", short_code='" + short_code + '\'' +
                 '}';
     }
 }

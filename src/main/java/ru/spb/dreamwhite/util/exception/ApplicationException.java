@@ -1,7 +1,5 @@
 package ru.spb.dreamwhite.util.exception;
 
-import ru.spb.dreamwhite.exception.ErrorType;
-
 import java.util.Arrays;
 
 public class ApplicationException extends RuntimeException {

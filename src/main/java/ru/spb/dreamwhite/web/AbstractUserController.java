@@ -35,6 +35,7 @@ public abstract class AbstractUserController {
 
     public void update(User user, int id) {
         log.info("update {} with id={}", user, id);
+        user.setId(id);
         service.update(user);
     }
 
