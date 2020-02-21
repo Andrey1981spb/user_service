@@ -14,6 +14,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -66,7 +67,7 @@ public class UserRestController extends AbstractUserController {
     @GetMapping
     public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException {
         List<User> userList;
-        if (parameters.get("phone").equals(null)) {
+        if (parameters.get("phone")==null) {
             userList = super.getByParameterOrAll(parameters);
         } else {
             String encodedValue = URLEncoder.encode((parameters.get("phone")), StandardCharsets.UTF_8.toString());
