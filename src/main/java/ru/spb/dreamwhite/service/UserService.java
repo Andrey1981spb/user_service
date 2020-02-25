@@ -1,36 +1,35 @@
 package ru.spb.dreamwhite.service;
 
+import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.spb.dreamwhite.model.User;
-import ru.spb.dreamwhite.repository.country.CountryMapStore;
 import ru.spb.dreamwhite.repository.user.UserRepository;
 import ru.spb.dreamwhite.util.Formatter;
+import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
-import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 
 @Service("userService")
 public class UserService {
 
     private UserRepository repository;
+    private static final Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Autowired
     public UserService(@Qualifier("anketUserRepository") UserRepository repository) {
         this.repository = repository;
     }
 
-    public User create(User user) {
+    public User create(User user) throws NumberParseException {
         Assert.notNull(user, "user must not be null");
-        String shortCode = this.shortCodeCreate(user.getLocale());
-        user.setPhone(Formatter.formate(user.getPhone(), shortCode));
-        return repository.save(user);
+        return repository.save(repository.save(provideWithFormattedPhone(user)));
     }
 
     public void delete(int id) {
@@ -41,30 +40,22 @@ public class UserService {
         return checkNotFoundWithId(repository.get(id), id);
     }
 
-    /*
-    public List<User> getAll() {
-        return repository.getAll();
-    }
-     */
-
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) {
+    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
         return repository.getByParameterOrAll(paramsMap);
     }
 
-    public void update(User user) {
+    public void update(User user) throws NumberParseException {
         Assert.notNull(user, "user must not be null");
-        repository.save(user);
+        repository.save(provideWithFormattedPhone(user));
     }
 
-    private String shortCodeCreate(String locale) {
-        String short_code;
-        if ((locale != null) & (locale != "")) {
-            short_code = CountryMapStore.getShortCode(locale);
-        } else {
-            short_code = null;
-        }
-        return short_code;
+    private static User provideWithFormattedPhone (User user) throws NumberParseException {
+        String short_code = CountryHandler.countryHandle(user.getLocale());
+        user.setShort_code(short_code);
+        user.setPhone(Formatter.formate(user.getPhone(), short_code));
+        return user;
     }
+
 }
 
 

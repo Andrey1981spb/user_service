@@ -1,14 +1,20 @@
 package ru.spb.dreamwhite.repository.user;
 
+import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
+import ru.spb.dreamwhite.service.UserService;
+import ru.spb.dreamwhite.util.Formatter;
+import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Map;
+
+import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 
 @Repository
 public class AnketUserRepository implements UserRepository {
@@ -37,15 +43,20 @@ public class AnketUserRepository implements UserRepository {
     }
 
     @Override
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) {
+    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
         String email = paramsMap.get("email");
-        String phone = paramsMap.get("phone");
+        String locale = paramsMap.get("locale");
+        String phone = Formatter.formate(paramsMap.get("phone"), CountryHandler.countryHandle(locale));
 
-        List<User> users = em.createQuery("SELECT u FROM User u WHERE (:emailValue is null OR u.email=:emailValue) AND (:phoneValue is null OR u.phone=:phoneValue)", User.class).
+        List<User> users = em.createQuery("SELECT u FROM User u WHERE (:emailValue is null OR u.email=:emailValue) " +
+                "AND (:phoneValue is null OR u.phone=:phoneValue)" +
+                "AND (:localeValue is null OR u.locale=:localeValue)", User.class).
                 setParameter("emailValue", email).
                 setParameter("phoneValue", phone).
+                setParameter("localeValue", locale).
                 getResultList();
-        return users;
+
+        return checkNotFound(users.size()==0? null :users, "not found");
     }
 
 }

@@ -55,16 +55,14 @@ public class ContactNumberValidator implements
         logger.info("Processing phone number: " + inputPhoneNumber + " with short code: " + shortCode);
 
         Phonenumber.PhoneNumber phoneNumberProto;
-        boolean isValidNumber = false;
+        boolean isValid = false;
 
         try {
             phoneNumberProto = phoneUtil.parse(inputPhoneNumber, shortCode);
 
-            boolean isValid;
-
             isValid = phoneUtil.isValidNumber(phoneNumberProto);
 
-            isValidNumber = isValid;
+            logger.info(phoneNumberProto + " valid is " + isValid);
 
             if (phoneNumberProto.hasCountryCode()) {
                 logger.info("Country code is present: " + phoneNumberProto.getCountryCode());
@@ -78,12 +76,11 @@ public class ContactNumberValidator implements
                 logger.info("National number is not present.");
             }
 
-
         } catch (NumberParseException e) {
             logger.info(e.getMessage());
         }
 
-        return isValidNumber;
+        return isValid;
     }
 
 }

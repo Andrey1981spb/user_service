@@ -27,7 +27,17 @@ public class ServiceTest {
     public void getByParametersOrAll() throws Exception {
         Map<String,String> paramsMap = new LinkedHashMap<>();
         paramsMap.put("email", null);
-        paramsMap.put("phone", "+78122347390");
+        paramsMap.put("phone", "+78122524578");
+
+        List<User> userList= userService.getByParameterOrAll(paramsMap);
+        assertMatch(userList, USER);
+    }
+
+    @Test
+    public void getByParametersNotFound() throws Exception {
+        Map<String,String> paramsMap = new LinkedHashMap<>();
+        paramsMap.put("email", null);
+        paramsMap.put("phone", "+78122524579");
 
         List<User> userList= userService.getByParameterOrAll(paramsMap);
         assertMatch(userList, USER);

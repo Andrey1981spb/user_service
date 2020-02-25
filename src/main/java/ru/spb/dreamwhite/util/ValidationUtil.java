@@ -2,9 +2,6 @@ package ru.spb.dreamwhite.util;
 
 import ru.spb.dreamwhite.util.exception.NotFoundException;
 
-import javax.validation.*;
-import java.util.Set;
-
 public class ValidationUtil {
 
     private ValidationUtil() {
