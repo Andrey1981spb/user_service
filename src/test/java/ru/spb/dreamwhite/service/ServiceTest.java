@@ -15,13 +15,24 @@ import static ru.spb.dreamwhite.TestData.*;
 
 @SpringJUnitConfig(locations = {
         "classpath:spring/spring-app.xml",
-        "classpath:spring/spring-db.xml"
+        "classpath:spring/spring-db.xml",
+        "classpath:spring/spring-event.xml"
 })
 @RunWith(SpringRunner.class)
 public class ServiceTest {
 
     @Autowired
     private UserService userService;
+
+    @Test
+    public void create() throws Exception {
+        User newUser = getNew();
+        User created = userService.create(new User(newUser));
+        Integer newId = created.getId();
+        newUser.setId(newId);
+        assertMatch((Iterable<User>) created, newUser);
+        assertMatch((Iterable<User>) userService.get(newId), newUser);
+    }
 
     @Test
     public void getByParametersOrAll() throws Exception {

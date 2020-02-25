@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.util;
+package ru.spb.dreamwhite.util.phoneUtil;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;

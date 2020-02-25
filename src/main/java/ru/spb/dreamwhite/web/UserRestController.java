@@ -24,7 +24,7 @@ public class UserRestController extends AbstractUserController {
 
     private static Logger logger = Logger.getLogger(UserRestController.class.getName());
 
-    static final String REST_URL = "/customers";
+    public static final String REST_URL = "/customers";
 
     @GetMapping("/{id}")
     public User get(@PathVariable int id) {

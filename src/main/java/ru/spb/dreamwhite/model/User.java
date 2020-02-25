@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.model;
 
+import org.springframework.stereotype.Component;
 import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import javax.validation.constraints.Email;
 })
 @Entity
 @Table(name = "users")
+@Component
 public class User {
 
     @Id

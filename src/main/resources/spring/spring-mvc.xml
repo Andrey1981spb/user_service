@@ -21,16 +21,8 @@
     </mvc:annotation-driven>
 
     <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
-
-        <property name="formatterRegistrars">
-            <set>
-                <ref bean="applicationFormatterRegistrar"/>
-            </set>
-        </property>
-
     </bean>
 
-    <bean id="applicationFormatterRegistrar" class="ru.spb.dreamwhite.util.phoneUtil.ApplicationFormatterRegister"/>
 
     <context:component-scan base-package="ru.spb.dreamwhite.**.web"/>
     <context:component-scan base-package="ru.spb.dreamwhite.**.util.phoneUtil"/>

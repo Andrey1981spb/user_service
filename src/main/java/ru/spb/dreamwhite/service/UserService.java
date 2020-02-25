@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.repository.user.UserRepository;
-import ru.spb.dreamwhite.util.Formatter;
+import ru.spb.dreamwhite.util.emailUtil.CustomEventPublisher;
+import ru.spb.dreamwhite.util.phoneUtil.Formatter;
 import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
 import java.util.List;
@@ -23,12 +24,16 @@ public class UserService {
     private static final Logger logger = Logger.getLogger(UserService.class.getName());
 
     @Autowired
+    CustomEventPublisher customEventPublisher;
+
+    @Autowired
     public UserService(@Qualifier("anketUserRepository") UserRepository repository) {
         this.repository = repository;
     }
 
     public User create(User user) throws NumberParseException {
         Assert.notNull(user, "user must not be null");
+        customEventPublisher.doStuffAndPublishAnEvent(user);
         return repository.save(repository.save(provideWithFormattedPhone(user)));
     }
 

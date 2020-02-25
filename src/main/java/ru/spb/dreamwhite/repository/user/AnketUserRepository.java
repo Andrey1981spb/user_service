@@ -2,11 +2,9 @@ package ru.spb.dreamwhite.repository.user;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
-import ru.spb.dreamwhite.service.UserService;
-import ru.spb.dreamwhite.util.Formatter;
+import ru.spb.dreamwhite.util.phoneUtil.Formatter;
 import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
 import javax.persistence.EntityManager;
@@ -18,8 +16,6 @@ import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 
 @Repository
 public class AnketUserRepository implements UserRepository {
-
-    private static final Sort SORT_NAME = Sort.by(Sort.Direction.ASC, "name");
 
     @Autowired
     private CrudUserRepository crudRepository;
