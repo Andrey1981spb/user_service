@@ -16,7 +16,7 @@ public class TestData {
 
 
     public static User getNew() {
-        return new User(null, "Gleb", "email@gmail.com", "8-812-2524578", "Россия", "RU");
+        return new User(null, "Gleb", "email@gmail.com", "8-812-2524585", "Россия", "RU");
     }
 
     public static User getUpdated() {

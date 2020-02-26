@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
+import static ru.spb.dreamwhite.util.phoneUtil.CountryHandler.countryHandle;
 
 @Service("userService")
 public class UserService {
@@ -55,7 +56,8 @@ public class UserService {
     }
 
     private static User provideWithFormattedPhone (User user) throws NumberParseException {
-        String short_code = CountryHandler.countryHandle(user.getLocale());
+        String short_code = countryHandle(user.getLocale());
+
         user.setShort_code(short_code);
         user.setPhone(Formatter.formate(user.getPhone(), short_code));
         return user;

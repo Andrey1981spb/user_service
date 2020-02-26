@@ -30,7 +30,7 @@ public class User {
 
     @Column(name = "email", nullable = false)
     @Email
-    @Size(max = 25)
+    @Size(max = 100)
     private String email;
 
   //  @ContactNumberFormat

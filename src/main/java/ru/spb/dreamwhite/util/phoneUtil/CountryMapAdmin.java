@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 @Component
 public class CountryMapAdmin {
 
-    private static Logger logger = Logger.getLogger(ContactNumberValidator.class.getName());
+    private static Logger logger = Logger.getLogger(CountryMapAdmin.class.getName());
 
     @Autowired
     CountryService countryService;
