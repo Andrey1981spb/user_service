@@ -32,7 +32,7 @@ public class UserRestController extends AbstractUserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws NumberParseException {
+    public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException {
         User createdUser = super.create(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path(REST_URL + "/{id")

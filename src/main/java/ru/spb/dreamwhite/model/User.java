@@ -46,20 +46,24 @@ public class User {
     @Size(max=4)
     private String short_code;
 
+    @Column(name="email_valid")
+    private boolean email_valid;
+
     public User() {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code(), u.isEmail_valid());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale, String short_code) {
+    public User(Integer id, String name, String email, String phone, String locale, String short_code, boolean email_valid) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.locale = locale;
         this.short_code = short_code;
+        this.email_valid = email_valid;
     }
 
     public String getEmail() {
@@ -110,6 +114,14 @@ public class User {
         this.short_code = short_code;
     }
 
+    public boolean isEmail_valid() {
+        return email_valid;
+    }
+
+    public void setEmail_valid(boolean email_valid) {
+        this.email_valid = email_valid;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -119,6 +131,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", locale='" + locale + '\'' +
                 ", short_code='" + short_code + '\'' +
+                ", email_valid='" + email_valid + '\'' +
                 '}';
     }
 }

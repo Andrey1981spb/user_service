@@ -49,12 +49,13 @@ public class PostUserListener implements ApplicationListener<OnPostUserDataEvent
         email.setSubject(subject);
         email.setText(message + "http://localhost:8080" + url);
         mailSender.send(email);
-
  */
+
+        long start = System.currentTimeMillis();
 
         Email from = new Email("no-reply@dreamwhite.ru");
         Email to = new Email(recipient);
-        Content content = new Content("text/plain", message);
+        Content content = new Content("text/plain", message + "http://localhost:8080" + url);
         Mail mail = new Mail(from, subject, to, content);
 
         Request request = new Request();
@@ -69,6 +70,8 @@ public class PostUserListener implements ApplicationListener<OnPostUserDataEvent
             logger.info(ex.getMessage());
         }
 
+        long finish = System.currentTimeMillis();
+        logger.info("SEND_MAIL DURATION IS " + String.valueOf(finish - start));
 
     }
 }

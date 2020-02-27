@@ -9,6 +9,7 @@ import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class AnketUserRepository implements UserRepository {
     private EntityManager em;
 
     @Override
-    public User save(User user) {
+    public User save(@Valid User user) {
         return crudRepository.save(user);
     }
 

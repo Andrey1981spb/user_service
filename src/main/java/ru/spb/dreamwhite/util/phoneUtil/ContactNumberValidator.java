@@ -35,6 +35,9 @@ public class ContactNumberValidator implements
         Object localeValue = new BeanWrapperImpl(contactField)
                 .getPropertyValue(short_code);
         Boolean isValid;
+
+        logger.info("SHORT_CODE IN VALIDATOR IS " + localeValue);
+
         if ((localeValue != null) & (localeValue != "")) {
             isValid = validateAndFormatPhoneNumber((String) numberValue, (String) localeValue);
         } else {
