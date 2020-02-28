@@ -53,7 +53,7 @@ public class AnketUserRepository implements UserRepository {
                 setParameter("localeValue", locale).
                 getResultList();
 
-        return checkNotFound(users.size()==0? null :users, "not found");
+        return users.size()==0? null :users;
     }
 
 }

@@ -5,20 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-import ru.spb.dreamwhite.model.Token;
 import ru.spb.dreamwhite.model.User;
-import ru.spb.dreamwhite.repository.token.TokenRepository;
 import ru.spb.dreamwhite.repository.user.UserRepository;
 import ru.spb.dreamwhite.util.emailUtil.CustomEventPublisher;
 import ru.spb.dreamwhite.util.emailUtil.MailSend;
 import ru.spb.dreamwhite.util.phoneUtil.Formatter;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
-import java.util.logging.Logger;
 
+import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
 import static ru.spb.dreamwhite.util.phoneUtil.CountryHandler.countryHandle;
 
@@ -26,8 +22,6 @@ import static ru.spb.dreamwhite.util.phoneUtil.CountryHandler.countryHandle;
 public class UserService {
 
     private UserRepository repository;
-    private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
-    private static final int EXPIRATION = 2;
 
     @Autowired
     CustomEventPublisher customEventPublisher;
@@ -36,7 +30,7 @@ public class UserService {
     MailSend mailSend;
 
     @Autowired
-    TokenRepository tokenRepository;
+    TokenService tokenService;
 
     @Autowired
     public UserService(@Qualifier("anketUserRepository") UserRepository repository) {
@@ -46,14 +40,7 @@ public class UserService {
     public User create(User user) throws NumberParseException {
         Assert.notNull(user, "user must not be null");
         User userPassedToRepository = repository.save(provideWithFormattedPhone(user));
-
-        long start = System.currentTimeMillis();
-        //   customEventPublisher.doStuffAndPublishAnEvent(userPassedToRepository);
-        mailSend.sendMail(user, this.createToken(userPassedToRepository));
-
-        long finish = System.currentTimeMillis();
-        LOGGER.info("PUBLISH DURATION IS " + String.valueOf(finish - start));
-
+        mailSend.sendMail(user, tokenService.createToken(userPassedToRepository));
         userPassedToRepository.setEmail_valid(true);
         this.update(userPassedToRepository);
         return userPassedToRepository;
@@ -68,21 +55,13 @@ public class UserService {
     }
 
     public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
-        return repository.getByParameterOrAll(paramsMap);
+        List<User> users = repository.getByParameterOrAll(paramsMap);
+        return checkNotFound(users,"not found");
     }
 
     public void update(User user) throws NumberParseException {
         Assert.notNull(user, "user must not be null");
         repository.save(provideWithFormattedPhone(user));
-    }
-
-    private Token createToken (User user){
-        String token = UUID.randomUUID().toString();
-        return tokenRepository.save(token, LocalDateTime.now().plusMinutes(EXPIRATION), user);
-    }
-
-    public Token getToken (String token){
-        return tokenRepository.get(token);
     }
 
     private static User provideWithFormattedPhone(User user) throws NumberParseException {
