@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.repository.user;
 
+import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.stereotype.Repository;
 import ru.spb.dreamwhite.model.User;
 
@@ -17,10 +18,6 @@ public interface UserRepository {
     // null if not found
     User get(int id);
 
-    /*
-    List<User> getAll();
-     */
-
-    List<User> getByParameterOrAll(Map<String, String> paramsMap);
+    List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException;
 
 }

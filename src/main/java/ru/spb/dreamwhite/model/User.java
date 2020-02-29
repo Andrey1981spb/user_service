@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.model;
 
+import org.springframework.stereotype.Component;
 import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
 
 import javax.persistence.*;
@@ -9,12 +10,13 @@ import javax.validation.constraints.Email;
 @ContactNumberConstraint.List({
         @ContactNumberConstraint(
                 number = "phone",
-                locale = "locale",
+                sh = "short_code",
                 message = "phone not valid!"
         )
 })
 @Entity
 @Table(name = "users")
+@Component
 public class User {
 
     @Id
@@ -26,9 +28,13 @@ public class User {
     @Size(max = 100)
     private String name;
 
+  //  @Column(name = "last_name", nullable = false)
+  //  @Size(max = 100)
+  //  private String lastName;
+
     @Column(name = "email", nullable = false)
     @Email
-    @Size(max = 25)
+    @Size(max = 100)
     private String email;
 
   //  @ContactNumberFormat
@@ -40,19 +46,28 @@ public class User {
     @Size(max = 50)
     private String locale;
 
+    @Column(name = "short_code")
+    @Size(max=4)
+    private String short_code;
+
+    @Column(name="email_valid")
+    private boolean email_valid;
+
     public User() {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code(), u.isEmail_valid());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale) {
+    public User(Integer id, String name, String email, String phone, String locale, String short_code, boolean email_valid) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.locale = locale;
+        this.short_code = short_code;
+        this.email_valid = email_valid;
     }
 
     public String getEmail() {
@@ -95,14 +110,32 @@ public class User {
         this.locale = locale;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public String getShort_code() {
+        return short_code;
+    }
+
+    public void setShort_code(String short_code) {
+        this.short_code = short_code;
+    }
+
+    public boolean isEmail_valid() {
+        return email_valid;
+    }
+
+    public void setEmail_valid(boolean email_valid) {
+        this.email_valid = email_valid;
+    }
+
+    @Override
+    public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", phone=" + phone +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", locale='" + locale + '\'' +
+                ", short_code='" + short_code + '\'' +
+                ", email_valid='" + email_valid + '\'' +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.web;
 
+import com.google.i18n.phonenumbers.NumberParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public abstract class AbstractUserController {
         return service.get(id);
     }
 
-    public User create(User user) {
+    public User create(User user) throws NumberParseException {
         log.info("create {}", user);
         return service.create(user);
     }
@@ -33,19 +34,13 @@ public abstract class AbstractUserController {
         service.delete(id);
     }
 
-    public void update(User user, int id) {
+    public void update(User user, int id) throws NumberParseException {
         log.info("update {} with id={}", user, id);
+        user.setId(id);
         service.update(user);
     }
 
-    /*
-    public List<User> getAll() {
-        log.info("getAll");
-        return service.getAll();
-    }
-     */
-
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws UnsupportedEncodingException {
+    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws UnsupportedEncodingException, NumberParseException {
         return service.getByParameterOrAll(paramsMap);
     }
 

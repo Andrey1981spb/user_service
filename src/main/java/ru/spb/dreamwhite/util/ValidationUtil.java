@@ -2,9 +2,6 @@ package ru.spb.dreamwhite.util;
 
 import ru.spb.dreamwhite.util.exception.NotFoundException;
 
-import javax.validation.*;
-import java.util.Set;
-
 public class ValidationUtil {
 
     private ValidationUtil() {
@@ -29,7 +26,6 @@ public class ValidationUtil {
         }
     }
 
-    //  http://stackoverflow.com/a/28565320/548473
     public static Throwable getRootCause(Throwable t) {
         Throwable result = t;
         Throwable cause;
