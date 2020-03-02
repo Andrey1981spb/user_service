@@ -13,8 +13,6 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
-import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
-
 @Repository
 public class AnketUserRepository implements UserRepository {
 
@@ -44,6 +42,7 @@ public class AnketUserRepository implements UserRepository {
         String email = paramsMap.get("email");
         String locale = paramsMap.get("locale");
         String phone = Formatter.formate(paramsMap.get("phone"), CountryHandler.countryHandle(locale));
+
 
         List<User> users = em.createQuery("SELECT u FROM User u WHERE (:emailValue is null OR u.email=:emailValue) " +
                 "AND (:phoneValue is null OR u.phone=:phoneValue)" +

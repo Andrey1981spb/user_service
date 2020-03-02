@@ -26,6 +26,10 @@ public class TokenService {
         return tokenRepository.get(token);
     }
 
+    public boolean delete(String token) {
+        return tokenRepository.delete(token);
+    }
+
 }
 
 
