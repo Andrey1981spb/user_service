@@ -20,8 +20,8 @@ import java.util.Map;
 public class RegistrationRestController {
 
     public static final String CONFIRM_REGISTRATION_URL = "/confirmRegistration";
-    public static final String REDIRECT_APPROVED_URL = "http://localhost:63342/test/src/main/webapp/access_approved.html?_ijt=4pq8jp23ivsed7lcrltrjo3g1h";
-    public static final String REDIRECT_DENIED_URL = "http://localhost:63342/test/src/main/webapp/access_denied.html?_ijt=4pq8jp23ivsed7lcrltrjo3g1h";
+    public static final String REDIRECT_APPROVED_URL = "https://dreamwhite.ru/";
+    public static final String REDIRECT_DENIED_URL = "https://stackoverflow.com/";
 
     @Autowired
     AnketUserRepository userRepository;
@@ -33,10 +33,12 @@ public class RegistrationRestController {
     public RedirectView confirmRegistration(@RequestParam("token") String token) {
         RedirectView redirectView;
         Token verificationToken = tokenService.getToken(token);
-        if (verificationToken.getExpiryDateTime().isBefore(LocalDateTime.now())) {
+        if (verificationToken == null || verificationToken.getExpiryDateTime().isBefore(LocalDateTime.now())) {
             redirectView = new RedirectView(REDIRECT_DENIED_URL);
-        } else redirectView = new RedirectView(REDIRECT_APPROVED_URL);
-
+        } else {
+            tokenService.delete(token);
+            redirectView = new RedirectView(REDIRECT_APPROVED_URL);
+        }
         return redirectView;
     }
 

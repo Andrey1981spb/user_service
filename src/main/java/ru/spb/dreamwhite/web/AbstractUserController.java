@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.service.UserService;
 
@@ -24,7 +25,7 @@ public abstract class AbstractUserController {
         return service.get(id);
     }
 
-    public User create(User user) throws NumberParseException {
+    public User create(User user) throws NumberParseException, MethodArgumentNotValidException {
         log.info("create {}", user);
         return service.create(user);
     }
@@ -34,7 +35,7 @@ public abstract class AbstractUserController {
         service.delete(id);
     }
 
-    public void update(User user, int id) throws NumberParseException {
+    public void update(User user, int id) throws NumberParseException, MethodArgumentNotValidException {
         log.info("update {} with id={}", user, id);
         user.setId(id);
         service.update(user);

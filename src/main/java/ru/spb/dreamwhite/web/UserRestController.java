@@ -1,6 +1,7 @@
 package ru.spb.dreamwhite.web;
 
 import com.google.i18n.phonenumbers.NumberParseException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.spb.dreamwhite.model.User;
@@ -32,7 +33,7 @@ public class UserRestController extends AbstractUserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException {
+    public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException, MethodArgumentNotValidException {
         User createdUser = super.create(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path(REST_URL + "/{id")
@@ -52,7 +53,7 @@ public class UserRestController extends AbstractUserController {
     @Override
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody User user, @PathVariable int id) throws NumberParseException {
+    public void update(@Valid @RequestBody User user, @PathVariable int id) throws NumberParseException, MethodArgumentNotValidException {
         super.update(user, id);
     }
 

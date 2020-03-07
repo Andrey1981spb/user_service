@@ -1,0 +1,16 @@
+ru/spb/dreamwhite/web/json/JacksonObjectMapper.class
+ru/spb/dreamwhite/util/exception/ApplicationException.class
+ru/spb/dreamwhite/service/UserService.class
+ru/spb/dreamwhite/model/User.class
+ru/spb/dreamwhite/web/json/JsonUtil.class
+ru/spb/dreamwhite/web/UserRestController.class
+ru/spb/dreamwhite/exception/ExistStorageException.class
+ru/spb/dreamwhite/util/exception/NotFoundException.class
+ru/spb/dreamwhite/util/ValidationUtil.class
+ru/spb/dreamwhite/web/json/JsonUtil$1.class
+ru/spb/dreamwhite/repository/InMemoryRepository.class
+ru/spb/dreamwhite/TemporaryTest.class
+ru/spb/dreamwhite/web/AbstractUserController.class
+ru/spb/dreamwhite/exception/ErrorType.class
+ru/spb/dreamwhite/exception/StorageException.class
+ru/spb/dreamwhite/repository/UserRepository.class

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.repository.user.UserRepository;
 import ru.spb.dreamwhite.util.emailUtil.CustomEventPublisher;
@@ -37,7 +38,7 @@ public class UserService {
         this.repository = repository;
     }
 
-    public User create(User user) throws NumberParseException {
+    public User create(User user) throws NumberParseException, MethodArgumentNotValidException {
         Assert.notNull(user, "user must not be null");
         User userPassedToRepository = repository.save(provideWithFormattedPhone(user));
         mailSend.sendMail(user, tokenService.createToken(userPassedToRepository));
@@ -59,7 +60,7 @@ public class UserService {
         return checkNotFound(users,"not found");
     }
 
-    public void update(User user) throws NumberParseException {
+    public void update(User user) throws NumberParseException, MethodArgumentNotValidException {
         Assert.notNull(user, "user must not be null");
         repository.save(provideWithFormattedPhone(user));
     }

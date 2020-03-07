@@ -26,4 +26,8 @@ public class TokenRepository {
         return crudTokenRepository.getByToken(token);
     }
 
+    public boolean delete(String token) {
+        return crudTokenRepository.delete(token) != 0;
+    }
+
 }

@@ -4,10 +4,12 @@ import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
 import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import ru.spb.dreamwhite.repository.country.CountryMapStore;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintViolationException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -63,7 +65,10 @@ public class ContactNumberValidator implements
         try {
             phoneNumberProto = phoneUtil.parse(inputPhoneNumber, shortCode);
 
-            isValid = phoneUtil.isValidNumber(phoneNumberProto);
+            try{isValid = phoneUtil.isValidNumber(phoneNumberProto);}
+            catch (ConstraintViolationException e){
+                e.getMessage();
+            }
 
             logger.info(phoneNumberProto + " valid is " + isValid);
 

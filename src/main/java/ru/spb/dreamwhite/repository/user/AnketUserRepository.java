@@ -3,17 +3,17 @@ package ru.spb.dreamwhite.repository.user;
 import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.util.phoneUtil.Formatter;
 import ru.spb.dreamwhite.util.phoneUtil.CountryHandler;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
-
-import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
 
 @Repository
 public class AnketUserRepository implements UserRepository {
