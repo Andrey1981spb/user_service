@@ -1,6 +1,3 @@
-DROP TABLE IF EXISTS tokens;
-DROP TABLE IF EXISTS users;
-DROP SEQUENCE IF EXISTS userseq;
 DROP SEQUENCE IF EXISTS token_seq;
 
 CREATE SEQUENCE userseq START WITH 1;
@@ -27,18 +24,3 @@ CREATE TABLE tokens
     expiry_date       timestamp               NOT NULL,
     FOREIGN KEY (id) REFERENCES users (id) ON DELETE CASCADE
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

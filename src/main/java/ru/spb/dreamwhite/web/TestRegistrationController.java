@@ -1,6 +1,7 @@
 package ru.spb.dreamwhite.web;
 
 import com.google.i18n.phonenumbers.NumberParseException;
+import org.apache.http.client.config.RequestConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import ru.spb.dreamwhite.repository.user.AnketUserRepository;
 import ru.spb.dreamwhite.service.TokenService;
 import ru.spb.dreamwhite.util.emailUtil.MailSend;
 
+import java.net.http.HttpRequest;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -46,6 +48,7 @@ public class TestRegistrationController {
         }
         return responce;
     }
+
 
     @GetMapping ("/testRepeatedConfirm")
     public String repeateConfirmRegistration(@RequestParam Map<String, String> parameters) throws NumberParseException {

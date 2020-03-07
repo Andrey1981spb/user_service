@@ -28,11 +28,9 @@ public class User {
     @Size(max = 100)
     private String name;
 
-    /*
-    @Column(name = "last_name", nullable = false)
-    @Size(max = 100)
-    private String lastName;
-     */
+   // @Column(name = "last_name", nullable = false)
+  //  @Size(max = 100)
+  //  private String lastName;
 
     @Column(name = "email", nullable = false)
     @Email

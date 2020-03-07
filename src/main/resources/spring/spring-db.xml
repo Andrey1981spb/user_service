@@ -11,55 +11,68 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
     <context:component-scan base-package="ru.spb.dreamwhite.repository"/>
     <jpa:repositories base-package="ru.spb.dreamwhite.repository"/>
 
-    <jdbc:initialize-database data-source="dataSource" >
-        <jdbc:script location="classpath:db/initDB.sql"/>
-        <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
-    </jdbc:initialize-database>
+    <tx:annotation-driven />
 
+    <beans profile="remote, local">
+        <jdbc:initialize-database data-source="dataSource" >
+            <jdbc:script location="classpath:db/initDB.sql"/>
+            <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
+        </jdbc:initialize-database>
+
+        <bean id="dataSource"
+              class="org.apache.tomcat.jdbc.pool.DataSource"
+              p:driverClassName="org.postgresql.Driver"
+              p:url="${database.url}"
+              p:username="${database.username}"
+              p:password="${database.password}"/>
+
+        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+              p:dataSource-ref="dataSource"
+              p:packagesToScan="ru.spb.dreamwhite.model">
+
+            <property name="jpaPropertyMap">
+                <map>
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}"
+                           value="${hibernate.use_sql_comments}"/>
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).JPA_PROXY_COMPLIANCE}" value="false"/>
+                    <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="update"/>
+                       <entry key="#{T(org.hibernate.cfg.AvailableSettings).DIALECT}"
+                              value="org.hibernate.dialect.SQLServerDialect"/>
+                    <!-- <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>-->
+                </map>
+            </property>
+
+            <property name="jpaVendorAdapter">
+                <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+                      p:showSql="${jpa.showSql}">
+                </bean>
+            </property>
+        </bean>
+
+        <!-- Transaction manager for a single JPA EntityManagerFactory (alternative to JTA) -->
+        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+              p:entityManagerFactory-ref="entityManagerFactory"/>
+
+    </beans>
+
+
+    <beans profile="local">
+        <context:property-placeholder location="classpath:db/postgres_local.properties" system-properties-mode="OVERRIDE"/>
+    </beans>
+
+    <beans profile="remote">
+        <context:property-placeholder location="classpath:db/postgres_remote.properties" system-properties-mode="OVERRIDE"/>
+    </beans>
+
+<!--
     <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
         <property name="staticMethod" value="org.slf4j.bridge.SLF4JBridgeHandler.install"/>
     </bean>
-
-    <bean id="dataSource"
-          class="org.apache.tomcat.jdbc.pool.DataSource"
-          p:driverClassName="org.postgresql.Driver"
-          p:url="${database.url}"
-          p:username="${database.username}"
-          p:password="${database.password}"/>
-
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-          p:dataSource-ref="dataSource"
-          p:packagesToScan="ru.spb.dreamwhite.model">
-
-        <property name="jpaPropertyMap">
-            <map>
-                <entry key="#{T(org.hibernate.cfg.AvailableSettings).FORMAT_SQL}" value="${hibernate.format_sql}"/>
-                <entry key="#{T(org.hibernate.cfg.AvailableSettings).USE_SQL_COMMENTS}"
-                       value="${hibernate.use_sql_comments}"/>
-                <entry key="#{T(org.hibernate.cfg.AvailableSettings).JPA_PROXY_COMPLIANCE}" value="false"/>
-                <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="update"/>
-              <!--   <entry key="#{T(org.hibernate.cfg.AvailableSettings).DIALECT}"
-                        value="org.hibernate.dialect.SQLServerDialect"/> -->
-           <!-- <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>-->
-            </map>
-        </property>
-
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
-                  p:showSql="${jpa.showSql}">
-            </bean>
-        </property>
-    </bean>
-
-    <tx:annotation-driven />
-
-    <!-- Transaction manager for a single JPA EntityManagerFactory (alternative to JTA) -->
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
-          p:entityManagerFactory-ref="entityManagerFactory"/>
+    -->
 
 </beans>
 
