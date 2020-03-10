@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -19,13 +20,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-@RestController
+@RestController ("userRestController")
 @RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserRestController extends AbstractUserController {
 
     private static Logger logger = Logger.getLogger(UserRestController.class.getName());
+    public static String HOSTNAME = null;
 
     public static final String REST_URL = "/customers";
+
+    public UserRestController() {
+    }
 
     @GetMapping("/{id}")
     public User get(@PathVariable int id) {
@@ -33,7 +38,9 @@ public class UserRestController extends AbstractUserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException, MethodArgumentNotValidException {
+    public ResponseEntity<User> createUser(@RequestBody User user, HttpServletRequest request) throws NumberParseException, MethodArgumentNotValidException {
+        HOSTNAME = request.getServerName();
+
         User createdUser = super.create(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path(REST_URL + "/{id")

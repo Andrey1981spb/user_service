@@ -352,24 +352,4 @@
         </dependencies>
     </dependencyManagement>
 
-    <profiles>
-
-        <profile>
-            <id>remote</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <spring.profiles.active>remote</spring.profiles.active>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>local</id>
-            <properties>
-                <spring.profiles.active>local</spring.profiles.active>
-            </properties>
-        </profile>
-    </profiles>
-
 </project>
