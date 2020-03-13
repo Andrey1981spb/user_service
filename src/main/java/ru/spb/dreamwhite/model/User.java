@@ -42,6 +42,9 @@ public class User {
     @Size(max = 50)
     private String locale;
 
+    @Column(name = "city")
+    private String city;
+
     @Column(name = "short_code")
     @Size(max = 4)
     private String short_code;
@@ -53,15 +56,16 @@ public class User {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code(), u.isEmail_valid());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getCity(), u.getShort_code(), u.isEmail_valid());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale, String short_code, boolean email_valid) {
+    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.locale = locale;
+        this.city = city;
         this.short_code = short_code;
         this.email_valid = email_valid;
     }
@@ -122,6 +126,14 @@ public class User {
         this.email_valid = email_valid;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -130,6 +142,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", locale='" + locale + '\'' +
+                ", city='" + city + '\'' +
                 ", short_code='" + short_code + '\'' +
                 ", email_valid='" + email_valid + '\'' +
                 '}';
