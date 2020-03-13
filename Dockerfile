@@ -6,7 +6,7 @@ ENV UNIX_SOCKET /var/run/postgresql/.s.PGSQL.5432
 ADD src/config/tomcat-users.xml  /usr/local/tomcat/conf/tomcat-users.xml
 ADD src/config/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 ADD src/config/server.xml /usr/local/tomcat/conf/server.xml
-ADD target/test.war /usr/local/tomcat/webapps/ROOT.war
+ADD target/user_service.war /usr/local/tomcat/webapps/ROOT.war
 RUN mkdir -p socket_volume/
 RUN chmod 777 socket_volume/
 

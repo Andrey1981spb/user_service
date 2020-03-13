@@ -10,9 +10,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFound;
-import static ru.spb.dreamwhite.util.ValidationUtil.checkNotFoundWithId;
-
 @Service
 public class CountryService {
 
@@ -25,11 +22,8 @@ public class CountryService {
         List<Country> countryList = repository.getAll();
         for (Country country : countryList) {
             countryMap.put(country.getTitle(), country.getCode());
-            //      System.out.println(country.getTitle() + country.getCode());
         }
-
         CountryMapStore.setCountryShortcodes(countryMap);
     }
-
 
 }

@@ -35,6 +35,7 @@ ru/spb/dreamwhite/repository/token/CrudTokenRepository.class
 ru/spb/dreamwhite/repository/token/TokenRepository.class
 ru/spb/dreamwhite/web/TestRegistrationController.class
 ru/spb/dreamwhite/repository/country/CountryRepository.class
+ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationAspect.class
 ru/spb/dreamwhite/service/country/CountryService.class
 ru/spb/dreamwhite/util/phoneUtil/Formatter.class
 ru/spb/dreamwhite/util/exception/NotFoundException.class

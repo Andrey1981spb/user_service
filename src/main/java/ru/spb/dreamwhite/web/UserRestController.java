@@ -25,8 +25,6 @@ import java.util.logging.Logger;
 public class UserRestController extends AbstractUserController {
 
     private static Logger logger = Logger.getLogger(UserRestController.class.getName());
-    public static String HOSTNAME = null;
-
     public static final String REST_URL = "/customers";
 
     public UserRestController() {
@@ -38,9 +36,7 @@ public class UserRestController extends AbstractUserController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser(@RequestBody User user, HttpServletRequest request) throws NumberParseException, MethodArgumentNotValidException {
-        HOSTNAME = request.getServerName();
-
+    public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException, MethodArgumentNotValidException {
         User createdUser = super.create(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path(REST_URL + "/{id")

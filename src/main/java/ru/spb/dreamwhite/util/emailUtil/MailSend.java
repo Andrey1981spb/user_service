@@ -14,8 +14,7 @@ import ru.spb.dreamwhite.model.User;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import static ru.spb.dreamwhite.web.TestRegistrationController.TEST_CONFIRM_REGISTRATION_URL;
-import static ru.spb.dreamwhite.web.UserRestController.HOSTNAME;
+import static ru.spb.dreamwhite.web.RootController.HOSTNAME;
 
 @Component
 public class MailSend {
@@ -35,7 +34,7 @@ public class MailSend {
 
         Email from = new Email("no-reply@dreamwhite.ru");
         Email to = new Email(recipient);
-        Content content = new Content("text/plain", message + HOSTNAME + url);
+        Content content = new Content("text/plain", message + "http://" + HOSTNAME + url);
         Mail mail = new Mail(from, subject, to, content);
 
         Request request = new Request();

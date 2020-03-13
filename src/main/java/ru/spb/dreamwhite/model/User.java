@@ -28,16 +28,12 @@ public class User {
     @Size(max = 100)
     private String name;
 
-   // @Column(name = "last_name", nullable = false)
-  //  @Size(max = 100)
-  //  private String lastName;
-
     @Column(name = "email", nullable = false)
     @Email
     @Size(max = 100)
     private String email;
 
-  //  @ContactNumberFormat
+    //  @ContactNumberFormat
     @Column(name = "phone", nullable = false, unique = true)
     @Size(max = 50)
     private String phone;
@@ -47,10 +43,10 @@ public class User {
     private String locale;
 
     @Column(name = "short_code")
-    @Size(max=4)
+    @Size(max = 4)
     private String short_code;
 
-    @Column(name="email_valid")
+    @Column(name = "email_valid")
     private boolean email_valid;
 
     public User() {

@@ -2,12 +2,18 @@ version: '3'
 
 services:
   webapp:
-    container_name: docker_test
+    container_name: users
     build:
       context: .
-    image: andrey1981spb/docker_test
+    image: andrey1981spb/users
     ports:
       - 8080:50000
+
+  psql2:
+    container_name: users_db
+    build:
+      context: ./database
+    image: andrey1981spb/users_db
 
 
 

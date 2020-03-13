@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="test:war" />
-      <artifact name="test:war exploded" />
+      <artifact name="user_service:war" />
+      <artifact name="user_service:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="BranchesTreeState">
@@ -26,40 +26,163 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="667de812-acec-435a-9e3c-1b9ed88a3ea5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationPointcut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/user_service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/postgres.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/service/country/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/service/country/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/ConfirmRegistrationPointcut.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/MailSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/MailSend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/RegistrationRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/RegistrationRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/OnPostUserDataEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/OnPostUserDataEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/PostUserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/util/emailUtil/PostUserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/HtmlTestingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/testControllers/HtmlTestingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/RootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/RootController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/TestRegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/testControllers/TestRegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/spb/dreamwhite/web/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/postgres_remote.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/postgres_remote.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/populateDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/postgres_local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/postgres_remote.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/test.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/initDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied/access_denied.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied/access_denied.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/populateDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/service/country/CountryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/service/country/CountryService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/MailSend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/MailSend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/RegistrationRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/RegistrationRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/OnPostUserDataEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/OnPostUserDataEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/PostUserListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/util/emailUtil/PostUserListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/HtmlTestingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/RootController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/RootController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/UserRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/UserRestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-db.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-mvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/test.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/test.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/approved/access_approved.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/approved/access_approved.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/META-INF/test.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/MailSend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/MailSend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/RegistrationRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/RegistrationRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/UserRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/UserRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/approved/access_approved.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/initDB.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/populateDB.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/config/MailProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/exception/ExistStorageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/exception/StorageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/model/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/model/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/country/CountryMapStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/country/CountryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/country/CrudCountryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/token/CrudTokenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/token/TokenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/user/AnketUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/user/CrudUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/user/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/service/TokenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/service/country/CountryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/ValidationUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/CustomEventPublisher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/MailSend.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/OnPostUserDataEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/emailUtil/PostUserListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/exception/ApplicationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/exception/ErrorInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/exception/ErrorType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/exception/IllegalRequestDataException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/exception/NotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/ContactNumberConstraint$List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/ContactNumberConstraint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/ContactNumberValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/CountryHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/CountryMapAdmin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/Formatter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/AbstractUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/ExceptionInfoHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/HtmlTestingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/RegistrationRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/RootController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/UserRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/json/JacksonObjectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/json/JsonUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/json/JsonUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-app.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-db.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-event.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-mvc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/denied/access_denied.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/aspectjrt-1.9.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/byte-buddy-1.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/cache-api-1.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/commons-codec-1.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/ehcache-3.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/hibernate-core-5.4.7.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/hibernate-jcache-5.4.7.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/hibernate-validator-6.0.17.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/httpclient-4.5.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/httpcore-4.4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jackson-annotations-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jackson-core-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jackson-databind-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jackson-datatype-hibernate5-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jackson-datatype-jsr310-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/java-http-client-4.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javax.el-api-3.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/javax.transaction-api-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jaxb-runtime-2.4.0-b180830.0438.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jsoup-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/jul-to-slf4j-1.7.28.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/libphonenumber-8.11.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/mail-1.5.0-b01.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/postgresql-42.2.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/sendgrid-java-4.4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/slf4j-api-1.7.28.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-context-support-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-data-commons-2.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-data-jpa-2.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-jdbc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-orm-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-web-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/spring-webmvc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/txw2-2.4.0-b180830.0438.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +248,7 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/ru/spb/dreamwhite" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -136,7 +259,8 @@
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41852486" />
     <property name="settings.editor.selected.configurable" value="spring" />
@@ -153,24 +277,15 @@
       <recent name="ru.spb.dreamwhite.util.phoneUtil" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied" />
       <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied" />
       <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.12">
-    <configuration name="ServiceTest.createWithNotValidPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpELTesting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SpELTesting" />
       <module name="test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.spb.dreamwhite.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.spb.dreamwhite.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.spb.dreamwhite.service.ServiceTest" />
-      <option name="METHOD_NAME" value="createWithNotValidPhone" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -227,7 +342,7 @@
       <module name="test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.spb.dreamwhite.web.*" />
+          <option name="PATTERN" value="ru.spb.dreamwhite.web.testControllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -242,14 +357,14 @@
     <configuration name="Tomcat 9.0.12" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" editBeforeRun="true" APPLICATION_SERVER_NAME="Tomcat 9.0.12" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="test:war">
+        <artifact name="user_service:war">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
-        <artifact name="test:war exploded">
+        <artifact name="user_service:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/test_exploded" />
+            <option name="CONTEXT_PATH" value="/user_service_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -314,10 +429,14 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="test:war" />
           <artifact name="test:war exploded" />
+          <artifact name="user_service:war" />
+          <artifact name="user_service:war exploded" />
         </option>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="test:war" />
           <artifact name="test:war exploded" />
+          <artifact name="user_service:war" />
+          <artifact name="user_service:war exploded" />
         </option>
         <option name="Make" enabled="true" />
       </method>
@@ -423,22 +542,25 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.SpELTesting" />
       <item itemvalue="JUnit.ServiceTest.getByEmailAndPhone" />
       <item itemvalue="JUnit.ServiceTest.getByParametersNotFound" />
-      <item itemvalue="JUnit.ServiceTest.createWithNotValidPhone" />
       <item itemvalue="JUnit.ServiceTest.getByPhone" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
       <item itemvalue="JUnit.UserRestControllerTest.createWithLocation" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpELTesting" />
         <item itemvalue="JUnit.UserRestControllerTest.createWithLocation" />
         <item itemvalue="JUnit.ServiceTest.getByPhone" />
         <item itemvalue="JUnit.ServiceTest.getByEmailAndPhone" />
         <item itemvalue="JUnit.ServiceTest.getByParametersNotFound" />
-        <item itemvalue="JUnit.ServiceTest.createWithNotValidPhone" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpringGeneralSettings">
+    <option name="showProfilesPanel" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -607,7 +729,13 @@
       <workItem from="1583671561450" duration="369000" />
       <workItem from="1583836730180" duration="44000" />
       <workItem from="1583839756803" duration="3607000" />
-      <workItem from="1583845582284" duration="13785000" />
+      <workItem from="1583845582284" duration="13894000" />
+      <workItem from="1583918059337" duration="18965000" />
+      <workItem from="1583939204443" duration="5659000" />
+      <workItem from="1584002167909" duration="4157000" />
+      <workItem from="1584010367201" duration="13661000" />
+      <workItem from="1584090653052" duration="6209000" />
+      <workItem from="1584097264491" duration="9652000" />
     </task>
     <task id="LOCAL-00001" summary="    add Dockerfile">
       <created>1579254984394</created>
@@ -714,7 +842,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583217463081</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="emailAdvice">
+      <created>1583859578197</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583859578197</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,12 +872,14 @@
     <MESSAGE value="encoder to controller add" />
     <MESSAGE value="   add service tests" />
     <MESSAGE value="Merge branch 'email_handler' of https://github.com/Andrey1981spb/test into email_handler&#10;&#10; Conflicts:&#10;&#9;src/main/resources/spring/spring-mvc.xml&#10;&#9;src/main/webapp/WEB-INF/access_denied.html&#10;&#9;src/main/webapp/WEB-INF/approved/access_approved.html&#10;&#9;src/main/webapp/WEB-INF/denied/access_denied.html&#10;&#9;src/main/webapp/access_denied.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'email_handler' of https://github.com/Andrey1981spb/test into email_handler&#10;&#10; Conflicts:&#10;&#9;src/main/resources/spring/spring-mvc.xml&#10;&#9;src/main/webapp/WEB-INF/access_denied.html&#10;&#9;src/main/webapp/WEB-INF/approved/access_approved.html&#10;&#9;src/main/webapp/WEB-INF/denied/access_denied.html&#10;&#9;src/main/webapp/access_denied.html" />
+    <MESSAGE value="emailAdvice" />
+    <option name="LAST_COMMIT_MESSAGE" value="emailAdvice" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="103" key="#Assign_Data_Sources" timestamp="1583218005221">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="427" y="100" width="752" height="501" key="#Assign_Data_Sources" timestamp="1584102338705">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="427" y="100" width="752" height="501" key="#Assign_Data_Sources/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584102338705" />
     <state x="320" y="103" key="#Assign_Data_Sources/0.23.1440.829@0.23.1440.829" timestamp="1583218005221" />
     <state x="320" y="103" key="#Assign_Data_Sources/0.23.1440.830@0.23.1440.830" timestamp="1581839930781" />
     <state x="507" y="277" key="#BuildArtifactsBeforeRunChooser" timestamp="1579093702193">
@@ -757,10 +894,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="261" y="25" width="1024" height="840" key="#Project_Structure/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583841983050" />
-    <state x="544" y="0" width="1024" height="1035" key="#Tomcat_9.0.12" timestamp="1583858820052">
+    <state x="544" y="0" width="1024" height="1035" key="#Tomcat_9.0.12" timestamp="1584102551397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="544" y="0" width="1024" height="1035" key="#Tomcat_9.0.12/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858820052" />
+    <state x="544" y="0" width="1024" height="1035" key="#Tomcat_9.0.12/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584102551397" />
     <state x="408" y="32" key="#Tomcat_9.0.12/0.23.1440.827@0.23.1440.827" timestamp="1579938233270" />
     <state x="408" y="32" key="#Tomcat_9.0.12/0.23.1440.828@0.23.1440.828" timestamp="1581923956891" />
     <state x="408" y="32" key="#Tomcat_9.0.12/0.23.1440.829@0.23.1440.829" timestamp="1583671795108" />
@@ -771,30 +908,37 @@
     </state>
     <state x="425" y="91" width="437" height="232" key="#Tomcat_Server/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583837499038" />
     <state x="319" y="96" key="#Tomcat_Server/0.23.1440.830@0.23.1440.830" timestamp="1579092995011" />
-    <state x="236" y="105" width="1071" height="745" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583842191362">
+    <state x="236" y="105" width="1071" height="745" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584099159893">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="236" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583842191362" />
+    <state x="236" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584099159893" />
     <state x="326" y="106" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.828@0.23.1440.828" timestamp="1579455548623" />
     <state x="177" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.829@0.23.1440.829" timestamp="1583218750165" />
     <state x="167" y="108" width="1071" height="745" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.830@0.23.1440.830" timestamp="1581846774862" />
     <state x="167" y="108" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.831@0.23.1440.831" timestamp="1582866748399" />
     <state x="177" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.832@0.23.1440.832" timestamp="1579514063839" />
-    <state x="533" y="127" key="#com.intellij.ide.util.MemberChooser" timestamp="1582061469817">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state x="645" y="322" width="613" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584010332880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="645" y="322" width="613" height="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584010332880" />
+    <state x="711" y="130" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1583934093411">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="711" y="130" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583934093411" />
     <state x="533" y="126" key="#com.intellij.ide.util.MemberChooser/0.23.1440.824@0.23.1440.824" timestamp="1579591445372" />
     <state x="533" y="127" key="#com.intellij.ide.util.MemberChooser/0.23.1440.829@0.23.1440.829" timestamp="1581430574921" />
     <state x="533" y="127" key="#com.intellij.ide.util.MemberChooser/0.23.1440.831@0.23.1440.831" timestamp="1582061469817" />
-    <state x="458" y="192" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581508089366">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="611" y="212" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584094779428">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="611" y="212" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584094779428" />
     <state x="458" y="192" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.830@0.23.1440.830" timestamp="1581508089366" />
     <state x="458" y="192" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.831@0.23.1440.831" timestamp="1581081192508" />
-    <state x="194" y="60" key="CommitChangelistDialog2" timestamp="1583837034842">
-      <screen x="0" y="0" width="1440" height="852" />
+    <state x="259" y="73" width="1100" height="961" key="CommitChangelistDialog2" timestamp="1583859576474">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="194" y="60" key="CommitChangelistDialog2/0.0.1440.852@0.0.1440.852" timestamp="1583837034842" />
+    <state x="259" y="73" width="1100" height="961" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583859576474" />
     <state x="328" y="145" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1579686041399" />
     <state x="328" y="145" key="CommitChangelistDialog2/0.23.1440.827@0.23.1440.827" timestamp="1579254984062" />
     <state x="203" y="111" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1583507703814" />
@@ -819,113 +963,113 @@
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="579" y="154" key="Github.UntrackedFilesDialog/0.23.1440.827@0.23.1440.827" timestamp="1579254917823" />
-    <state width="1676" height="459" key="GridCell.Tab.0.bottom" timestamp="1583858965610">
+    <state width="1858" height="397" key="GridCell.Tab.0.bottom" timestamp="1584106448047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1858" height="397" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584106448047" />
     <state width="1398" height="358" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1580042468823" />
     <state width="1398" height="470" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1583671806392" />
     <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583571748147" />
     <state width="1398" height="246" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1676" height="459" key="GridCell.Tab.0.center" timestamp="1583858965610">
+    <state width="1858" height="397" key="GridCell.Tab.0.center" timestamp="1584106448047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1858" height="397" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584106448047" />
     <state width="1398" height="358" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1580042468820" />
     <state width="1398" height="470" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1582982020394" />
     <state width="1398" height="246" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1583671806391" />
     <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1583571748146" />
     <state width="1398" height="246" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1676" height="459" key="GridCell.Tab.0.left" timestamp="1583858965610">
+    <state width="1858" height="397" key="GridCell.Tab.0.left" timestamp="1584106448047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1858" height="397" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584106448047" />
     <state width="1398" height="358" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1580042468819" />
     <state width="1398" height="470" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1582982020393" />
     <state width="1398" height="246" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1583671806391" />
     <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1583571748145" />
     <state width="1398" height="246" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1583682795931" />
     <state width="1398" height="174" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1582057671509" />
-    <state width="1676" height="459" key="GridCell.Tab.0.right" timestamp="1583858965610">
+    <state width="1858" height="397" key="GridCell.Tab.0.right" timestamp="1584106448047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1858" height="397" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584106448047" />
     <state width="1398" height="358" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1580042468821" />
     <state width="1398" height="470" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1583671806392" />
     <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1583571748147" />
     <state width="1398" height="246" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1676" height="459" key="GridCell.Tab.1.bottom" timestamp="1583858965610">
+    <state width="1541" height="243" key="GridCell.Tab.1.bottom" timestamp="1584103796183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1541" height="243" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796183" />
     <state width="1398" height="470" key="GridCell.Tab.1.bottom/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1583671806394" />
     <state width="1398" height="236" key="GridCell.Tab.1.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583571748151" />
     <state width="1398" height="246" key="GridCell.Tab.1.bottom/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.bottom/0.23.1440.832@0.23.1440.832" timestamp="1582036009732" />
-    <state width="1676" height="459" key="GridCell.Tab.1.center" timestamp="1583858965610">
+    <state width="1541" height="243" key="GridCell.Tab.1.center" timestamp="1584103796182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1541" height="243" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796182" />
     <state width="1398" height="470" key="GridCell.Tab.1.center/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.center/0.23.1440.830@0.23.1440.830" timestamp="1583571748150" />
     <state width="1398" height="246" key="GridCell.Tab.1.center/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.center/0.23.1440.832@0.23.1440.832" timestamp="1582036009731" />
-    <state width="1676" height="459" key="GridCell.Tab.1.left" timestamp="1583858965610">
+    <state width="1541" height="243" key="GridCell.Tab.1.left" timestamp="1584103796182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1541" height="243" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796182" />
     <state width="1398" height="470" key="GridCell.Tab.1.left/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.left/0.23.1440.830@0.23.1440.830" timestamp="1583571748148" />
     <state width="1398" height="246" key="GridCell.Tab.1.left/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.left/0.23.1440.832@0.23.1440.832" timestamp="1582036009731" />
-    <state width="1676" height="459" key="GridCell.Tab.1.right" timestamp="1583858965610">
+    <state width="1541" height="243" key="GridCell.Tab.1.right" timestamp="1584103796182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965610" />
+    <state width="1541" height="243" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796182" />
     <state width="1398" height="470" key="GridCell.Tab.1.right/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.right/0.23.1440.830@0.23.1440.830" timestamp="1583571748151" />
     <state width="1398" height="246" key="GridCell.Tab.1.right/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.right/0.23.1440.832@0.23.1440.832" timestamp="1582036009731" />
-    <state width="1676" height="459" key="GridCell.Tab.2.bottom" timestamp="1583858965611">
+    <state width="1541" height="243" key="GridCell.Tab.2.bottom" timestamp="1584103796183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965611" />
+    <state width="1541" height="243" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796183" />
     <state width="1398" height="470" key="GridCell.Tab.2.bottom/0.23.1440.828@0.23.1440.828" timestamp="1582982020397" />
     <state width="1398" height="246" key="GridCell.Tab.2.bottom/0.23.1440.829@0.23.1440.829" timestamp="1583671806400" />
     <state width="1398" height="236" key="GridCell.Tab.2.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583571748156" />
     <state width="1398" height="246" key="GridCell.Tab.2.bottom/0.23.1440.831@0.23.1440.831" timestamp="1583682795935" />
     <state width="1398" height="49" key="GridCell.Tab.2.bottom/0.23.1440.832@0.23.1440.832" timestamp="1581853652793" />
-    <state width="1676" height="459" key="GridCell.Tab.2.center" timestamp="1583858965611">
+    <state width="1541" height="243" key="GridCell.Tab.2.center" timestamp="1584103796183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965611" />
+    <state width="1541" height="243" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796183" />
     <state width="1398" height="470" key="GridCell.Tab.2.center/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.2.center/0.23.1440.829@0.23.1440.829" timestamp="1583671806396" />
     <state width="1398" height="236" key="GridCell.Tab.2.center/0.23.1440.830@0.23.1440.830" timestamp="1583571748152" />
     <state width="1398" height="246" key="GridCell.Tab.2.center/0.23.1440.831@0.23.1440.831" timestamp="1583682795934" />
     <state width="1398" height="49" key="GridCell.Tab.2.center/0.23.1440.832@0.23.1440.832" timestamp="1581853652792" />
-    <state width="1676" height="459" key="GridCell.Tab.2.left" timestamp="1583858965611">
+    <state width="1541" height="243" key="GridCell.Tab.2.left" timestamp="1584103796183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965611" />
+    <state width="1541" height="243" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796183" />
     <state width="1398" height="470" key="GridCell.Tab.2.left/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.2.left/0.23.1440.829@0.23.1440.829" timestamp="1583671806395" />
     <state width="1398" height="236" key="GridCell.Tab.2.left/0.23.1440.830@0.23.1440.830" timestamp="1583571748152" />
     <state width="1398" height="246" key="GridCell.Tab.2.left/0.23.1440.831@0.23.1440.831" timestamp="1583682795934" />
     <state width="1398" height="49" key="GridCell.Tab.2.left/0.23.1440.832@0.23.1440.832" timestamp="1581853652792" />
-    <state width="1676" height="459" key="GridCell.Tab.2.right" timestamp="1583858965611">
+    <state width="1541" height="243" key="GridCell.Tab.2.right" timestamp="1584103796183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1676" height="459" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583858965611" />
+    <state width="1541" height="243" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584103796183" />
     <state width="1398" height="470" key="GridCell.Tab.2.right/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.2.right/0.23.1440.829@0.23.1440.829" timestamp="1583671806397" />
     <state width="1398" height="236" key="GridCell.Tab.2.right/0.23.1440.830@0.23.1440.830" timestamp="1583571748154" />
@@ -965,17 +1109,18 @@
       <screen x="0" y="23" width="1440" height="831" />
     </state>
     <state x="581" y="156" key="RollbackChangesDialog/0.23.1440.831@0.23.1440.831" timestamp="1581081258506" />
-    <state x="305" y="0" width="1024" height="829" key="SettingsEditor" timestamp="1583839951247">
+    <state x="305" y="0" width="1024" height="840" key="SettingsEditor" timestamp="1584113423925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.851@0.0.1440.851" timestamp="1579254719436" />
-    <state x="305" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583839951247" />
+    <state x="305" y="0" width="1024" height="840" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584113423925" />
     <state x="229" y="23" width="1024" height="829" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1581712022951" />
     <state x="229" y="23" width="1024" height="830" key="SettingsEditor/0.23.1440.830@0.23.1440.830" timestamp="1581499055297" />
     <state x="229" y="23" width="1024" height="831" key="SettingsEditor/0.23.1440.831@0.23.1440.831" timestamp="1581081334620" />
-    <state x="321" y="182" key="Vcs.Push.Dialog.v2" timestamp="1583507602595">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="428" y="199" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1583859587893">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="428" y="199" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1583859587893" />
     <state x="321" y="181" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1579686158125" />
     <state x="321" y="181" key="Vcs.Push.Dialog.v2/0.23.1440.827@0.23.1440.827" timestamp="1579254994672" />
     <state x="321" y="182" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1583507602595" />
@@ -990,6 +1135,10 @@
     </state>
     <state x="526" y="223" key="chooseDestDirectoryDialog/0.23.1440.830@0.23.1440.830" timestamp="1581106863149" />
     <state x="526" y="223" key="chooseDestDirectoryDialog/0.23.1440.831@0.23.1440.831" timestamp="1581184317235" />
+    <state x="793" y="210" width="622" height="620" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584114644365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="793" y="210" width="622" height="620" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584114644365" />
     <state x="409" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1583836811917">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
@@ -1038,6 +1187,10 @@
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="484" y="270" key="git4idea.ui.GitUnstashDialog/0.23.1440.825@0.23.1440.825" timestamp="1579686101880" />
+    <state x="621" y="237" width="672" height="677" key="run.anything.popup" timestamp="1584004342804">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="621" y="237" width="672" height="677" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1584004342804" />
     <state x="385" y="176" width="670" height="676" key="search.everywhere.popup" timestamp="1583251875341">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
