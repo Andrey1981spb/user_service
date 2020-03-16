@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 import static ru.spb.dreamwhite.util.emailUtil.MailSend.CONFIRM_REGISTRATION_ENDPOINT;
 import static ru.spb.dreamwhite.web.RegistrationRestController.CONFIRM_REGISTRATION_URL;
-import static ru.spb.dreamwhite.web.testControllers.TestRegistrationController.TEST_CONFIRM_REGISTRATION_URL;
+import static ru.spb.dreamwhite.web.testUserControllers.TestRegistrationController.TEST_CONFIRM_REGISTRATION_URL;
 import static ru.spb.dreamwhite.web.RootController.HOSTNAME;
 
 @Aspect

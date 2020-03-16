@@ -6,6 +6,7 @@ import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
+import java.util.*;
 
 @ContactNumberConstraint.List({
         @ContactNumberConstraint(
@@ -52,14 +53,17 @@ public class User {
     @Column(name = "email_valid")
     private boolean email_valid;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Tracker> trakers;
+
     public User() {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getCity(), u.getShort_code(), u.isEmail_valid());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getCity(), u.getShort_code(), u.isEmail_valid(), u.getTrakers());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid) {
+    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid, Tracker tracker, Tracker... trackers) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -68,6 +72,7 @@ public class User {
         this.city = city;
         this.short_code = short_code;
         this.email_valid = email_valid;
+        this.trakers = Arrays.asList(tracker, trackers);
     }
 
     public String getEmail() {
@@ -132,6 +137,14 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public List<Tracker> getTrakers() {
+        return trakers;
+    }
+
+    public void setTrakers(Collection<Tracker> trakers) {
+        this.trakers = Arrays.copyOf;
     }
 
     @Override

@@ -55,8 +55,8 @@ public class UserService {
         return checkNotFoundWithId(repository.get(id), id);
     }
 
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
-        List<User> users = repository.getByParameterOrAll(paramsMap);
+    public List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
+        List<User> users = repository.getUserByParameterOrAll(paramsMap);
         return checkNotFound(users,"not found");
     }
 

@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static ru.spb.dreamwhite.TestData.*;
+import static ru.spb.dreamwhite.UserTestData.*;
 
 @SpringJUnitConfig ( locations = {
         "classpath:spring/spring-app.xml",
@@ -25,7 +25,7 @@ import static ru.spb.dreamwhite.TestData.*;
 } )
 @Sql ( scripts = "classpath:db/populateDB.sql", config = @SqlConfig ( encoding = "UTF-8" ) )
 @RunWith ( SpringRunner.class )
-public class ServiceTest {
+public class UserServiceTest {
 
     @Autowired
     private UserService userService;
@@ -65,7 +65,7 @@ public class ServiceTest {
         paramsMap.put("email", null);
         paramsMap.put("phone", "+78122524578");
 
-        User user = userService.getByParameterOrAll(paramsMap).get(0);
+        User user = userService.getUserByParameterOrAll(paramsMap).get(0);
         USER_MATCHERS.assertMatch(user, USER);
     }
 
@@ -75,7 +75,7 @@ public class ServiceTest {
         paramsMap.put("email", "email@gmail.com");
         paramsMap.put("phone", null);
 
-        User user = userService.getByParameterOrAll(paramsMap).get(0);
+        User user = userService.getUserByParameterOrAll(paramsMap).get(0);
         USER_MATCHERS.assertMatch(user, USER);
     }
 
@@ -86,7 +86,7 @@ public class ServiceTest {
         paramsMap.put("phone", "88122347398");
         paramsMap.put("locale", "Россия");
 
-        User user = userService.getByParameterOrAll(paramsMap).get(0);
+        User user = userService.getUserByParameterOrAll(paramsMap).get(0);
         USER_MATCHERS.assertMatch(user, USER3);
     }
 
@@ -96,7 +96,7 @@ public class ServiceTest {
         paramsMap.put("email", null);
         paramsMap.put("phone", "+78122524579");
         assertThrows(NotFoundException.class, () ->
-                userService.getByParameterOrAll(paramsMap).get(0));
+                userService.getUserByParameterOrAll(paramsMap).get(0));
     }
 
 }

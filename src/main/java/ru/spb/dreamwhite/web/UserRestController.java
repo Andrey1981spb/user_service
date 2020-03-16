@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -21,11 +20,11 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 @RestController ("userRestController")
-@RequestMapping(value = UserRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = UserRestController.USER_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserRestController extends AbstractUserController {
 
     private static Logger logger = Logger.getLogger(UserRestController.class.getName());
-    public static final String REST_URL = "/customers";
+    public static final String USER_URL = "/customers";
 
     public UserRestController() {
     }
@@ -39,7 +38,7 @@ public class UserRestController extends AbstractUserController {
     public ResponseEntity<User> createUser(@RequestBody User user) throws NumberParseException, MethodArgumentNotValidException {
         User createdUser = super.create(user);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path(REST_URL + "/{id")
+                .path(USER_URL + "/{id")
                 .buildAndExpand(createdUser.getId())
                 .toUri();
         return ResponseEntity.created(uri)
@@ -61,14 +60,14 @@ public class UserRestController extends AbstractUserController {
     }
 
     @GetMapping
-    public List<User> getByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException, NumberParseException {
+    public List<User> getUserByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException, NumberParseException {
         List<User> userList;
         if (parameters.get("phone") == null) {
-            userList = super.getByParameterOrAll(parameters);
+            userList = super.getUserByParameterOrAll(parameters);
         } else {
             String encodedValue = URLEncoder.encode((parameters.get("phone")), StandardCharsets.UTF_8.toString());
             parameters.put("phone", encodedValue);
-            userList = super.getByParameterOrAll(parameters);
+            userList = super.getUserByParameterOrAll(parameters);
         }
         return userList;
     }

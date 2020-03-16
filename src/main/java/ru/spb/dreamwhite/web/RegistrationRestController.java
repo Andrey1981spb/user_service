@@ -51,10 +51,10 @@ public class RegistrationRestController {
     @GetMapping("/repeatedConfirm")
     public RedirectView repeateConfirmRegistration(@RequestParam Map<String, String> parameters) throws NumberParseException {
         RedirectView redirectView;
-        if (userRepository.getByParameterOrAll(parameters) == null) {
+        if (userRepository.getUserByParameterOrAll(parameters) == null) {
             redirectView = new RedirectView(REDIRECT_DENIED_URL);
         } else {
-            User user = userRepository.getByParameterOrAll(parameters).get(0);
+            User user = userRepository.getUserByParameterOrAll(parameters).get(0);
             mailSend.sendMail(user, tokenService.createToken(user));
             redirectView = new RedirectView(REDIRECT_APPROVED_URL);
         }

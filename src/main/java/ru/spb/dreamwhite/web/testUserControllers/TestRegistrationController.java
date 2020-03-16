@@ -1,4 +1,4 @@
-package ru.spb.dreamwhite.web.testControllers;
+package ru.spb.dreamwhite.web.testUserControllers;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,11 +50,11 @@ public class TestRegistrationController {
     @GetMapping ("/testRepeatedConfirm")
     public String repeateConfirmRegistration(@RequestParam Map<String, String> parameters) throws NumberParseException {
         String responce;
-        if (userRepository.getByParameterOrAll(parameters) == null) {
+        if (userRepository.getUserByParameterOrAll(parameters) == null) {
             responce = TEST_FORWARD_DENIED_ACCESS;
         }
         else {
-            User user=  userRepository.getByParameterOrAll(parameters).get(0);
+            User user=  userRepository.getUserByParameterOrAll(parameters).get(0);
             mailSend.sendMail(user, tokenService.createToken(user));
             responce = TEST_FORWARD_DENIED_APPROVED;
         }

@@ -41,8 +41,8 @@ public abstract class AbstractUserController {
         service.update(user);
     }
 
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws UnsupportedEncodingException, NumberParseException {
-        return service.getByParameterOrAll(paramsMap);
+    public List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws UnsupportedEncodingException, NumberParseException {
+        return service.getUserByParameterOrAll(paramsMap);
     }
 
 }
