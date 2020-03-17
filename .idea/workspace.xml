@@ -8,29 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="667de812-acec-435a-9e3c-1b9ed88a3ea5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/approved/access_approved.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied/access_denied.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/access_denied.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/populateDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/postgres.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/test.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/initDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/initDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/populateDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/populateDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/db/postgres.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/user/AnketUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/repository/user/AnketUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/ContactNumberValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/util/phoneUtil/ContactNumberValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/ru/spb/dreamwhite/web/TestRegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/classes/spring/spring-db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +154,7 @@
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/ru/spb/dreamwhite" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/denied" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -209,7 +187,7 @@
       <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.12">
+  <component name="RunManager" selected="JUnit.ServiceTest.create">
     <configuration name="ServiceTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test" />
       <extension name="coverage">
@@ -221,22 +199,6 @@
       <option name="PACKAGE_NAME" value="ru.spb.dreamwhite.service" />
       <option name="MAIN_CLASS_NAME" value="ru.spb.dreamwhite.service.ServiceTest" />
       <option name="METHOD_NAME" value="create" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServiceTest.createWithFormattedPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.spb.dreamwhite.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.spb.dreamwhite.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.spb.dreamwhite.service.ServiceTest" />
-      <option name="METHOD_NAME" value="createWithFormattedPhone" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -285,6 +247,22 @@
       <option name="PACKAGE_NAME" value="ru.spb.dreamwhite.service" />
       <option name="MAIN_CLASS_NAME" value="ru.spb.dreamwhite.service.ServiceTest" />
       <option name="METHOD_NAME" value="getByParametersNotFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.getByPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.spb.dreamwhite.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.spb.dreamwhite.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.spb.dreamwhite.service.ServiceTest" />
+      <option name="METHOD_NAME" value="getByPhone" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -475,19 +453,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ServiceTest.getByEmailAndPhone" />
-      <item itemvalue="JUnit.ServiceTest.create" />
-      <item itemvalue="JUnit.ServiceTest.createWithFormattedPhone" />
       <item itemvalue="JUnit.ServiceTest.getByParametersNotFound" />
       <item itemvalue="JUnit.ServiceTest.createWithNotValidPhone" />
+      <item itemvalue="JUnit.ServiceTest.getByPhone" />
+      <item itemvalue="JUnit.ServiceTest.create" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.12" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServiceTest.create" />
+        <item itemvalue="JUnit.ServiceTest.getByPhone" />
+        <item itemvalue="JUnit.ServiceTest.getByEmailAndPhone" />
         <item itemvalue="JUnit.ServiceTest.createWithNotValidPhone" />
         <item itemvalue="JUnit.ServiceTest.getByParametersNotFound" />
-        <item itemvalue="JUnit.ServiceTest.createWithFormattedPhone" />
-        <item itemvalue="JUnit.ServiceTest.create" />
-        <item itemvalue="JUnit.ServiceTest.getByEmailAndPhone" />
       </list>
     </recent_temporary>
   </component>
@@ -669,6 +647,21 @@
       <workItem from="1583570460068" duration="411000" />
       <workItem from="1583671561450" duration="369000" />
       <workItem from="1583836730180" duration="44000" />
+      <workItem from="1583836811966" duration="1767000" />
+      <workItem from="1583838793060" duration="318000" />
+      <workItem from="1584048259756" duration="33000" />
+      <workItem from="1584271901519" duration="9000" />
+      <workItem from="1584274825169" duration="692000" />
+      <workItem from="1584352848971" duration="22000" />
+      <workItem from="1584353025211" duration="64000" />
+      <workItem from="1584353129398" duration="463000" />
+      <workItem from="1584353913393" duration="30000" />
+      <workItem from="1584354011647" duration="81000" />
+      <workItem from="1584354120868" duration="92000" />
+      <workItem from="1584354320398" duration="131000" />
+      <workItem from="1584354496220" duration="130000" />
+      <workItem from="1584354810095" duration="494000" />
+      <workItem from="1584355382309" duration="130000" />
     </task>
     <task id="LOCAL-00001" summary="    add Dockerfile">
       <created>1579254984394</created>
@@ -775,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583217463081</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="    profiles">
+      <created>1583837037734</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583837037734</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -795,7 +795,8 @@
     <MESSAGE value="encoder to controller add" />
     <MESSAGE value="   add service tests" />
     <MESSAGE value="Merge branch 'email_handler' of https://github.com/Andrey1981spb/test into email_handler&#10;&#10; Conflicts:&#10;&#9;src/main/resources/spring/spring-mvc.xml&#10;&#9;src/main/webapp/WEB-INF/access_denied.html&#10;&#9;src/main/webapp/WEB-INF/approved/access_approved.html&#10;&#9;src/main/webapp/WEB-INF/denied/access_denied.html&#10;&#9;src/main/webapp/access_denied.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'email_handler' of https://github.com/Andrey1981spb/test into email_handler&#10;&#10; Conflicts:&#10;&#9;src/main/resources/spring/spring-mvc.xml&#10;&#9;src/main/webapp/WEB-INF/access_denied.html&#10;&#9;src/main/webapp/WEB-INF/approved/access_approved.html&#10;&#9;src/main/webapp/WEB-INF/denied/access_denied.html&#10;&#9;src/main/webapp/access_denied.html" />
+    <MESSAGE value="    profiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="    profiles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="103" key="#Assign_Data_Sources" timestamp="1583218005221">
@@ -855,10 +856,12 @@
       <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="505" y="135" key="ExecutionTargetDialog/0.23.1440.829@0.23.1440.829" timestamp="1583227958692" />
-    <state x="125" y="166" key="FileChooserDialogImpl" timestamp="1579455545556">
-      <screen x="0" y="23" width="1440" height="828" />
+    <state x="125" y="166" key="FileChooserDialogImpl" timestamp="1584355353118">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
+    <state x="125" y="147" key="FileChooserDialogImpl/0.0.1440.852@0.0.1440.852" timestamp="1584353755022" />
     <state x="125" y="166" key="FileChooserDialogImpl/0.23.1440.828@0.23.1440.828" timestamp="1579455545556" />
+    <state x="125" y="166" key="FileChooserDialogImpl/0.23.1440.829@0.23.1440.829" timestamp="1584355353118" />
     <state x="507" y="178" key="FileChooserDialogImpl/0.23.1440.830@0.23.1440.830" timestamp="1579092993498" />
     <state x="590" y="363" width="259" height="261" key="Github.ShareDialog" timestamp="1579254905373">
       <screen x="0" y="23" width="1440" height="827" />
@@ -869,69 +872,77 @@
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="579" y="154" key="Github.UntrackedFilesDialog/0.23.1440.827@0.23.1440.827" timestamp="1579254917823" />
-    <state width="1398" height="246" key="GridCell.Tab.0.bottom" timestamp="1583682795932">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="280" key="GridCell.Tab.0.bottom" timestamp="1583839068307">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="280" key="GridCell.Tab.0.bottom/0.0.1440.852@0.0.1440.852" timestamp="1583839068307" />
     <state width="1398" height="358" key="GridCell.Tab.0.bottom/0.23.1440.827@0.23.1440.827" timestamp="1580042468823" />
     <state width="1398" height="470" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.0.bottom/0.23.1440.829@0.23.1440.829" timestamp="1583671806392" />
     <state width="1398" height="236" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583571748147" />
     <state width="1398" height="246" key="GridCell.Tab.0.bottom/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1398" height="246" key="GridCell.Tab.0.center" timestamp="1583682795932">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="280" key="GridCell.Tab.0.center" timestamp="1583839068305">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="280" key="GridCell.Tab.0.center/0.0.1440.852@0.0.1440.852" timestamp="1583839068305" />
     <state width="1398" height="358" key="GridCell.Tab.0.center/0.23.1440.827@0.23.1440.827" timestamp="1580042468820" />
     <state width="1398" height="470" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1582982020394" />
     <state width="1398" height="246" key="GridCell.Tab.0.center/0.23.1440.829@0.23.1440.829" timestamp="1583671806391" />
     <state width="1398" height="236" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1583571748146" />
     <state width="1398" height="246" key="GridCell.Tab.0.center/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1398" height="246" key="GridCell.Tab.0.left" timestamp="1583682795931">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="280" key="GridCell.Tab.0.left" timestamp="1583839068304">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="280" key="GridCell.Tab.0.left/0.0.1440.852@0.0.1440.852" timestamp="1583839068304" />
     <state width="1398" height="358" key="GridCell.Tab.0.left/0.23.1440.827@0.23.1440.827" timestamp="1580042468819" />
     <state width="1398" height="470" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1582982020393" />
     <state width="1398" height="246" key="GridCell.Tab.0.left/0.23.1440.829@0.23.1440.829" timestamp="1583671806391" />
     <state width="1398" height="236" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1583571748145" />
     <state width="1398" height="246" key="GridCell.Tab.0.left/0.23.1440.831@0.23.1440.831" timestamp="1583682795931" />
     <state width="1398" height="174" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1582057671509" />
-    <state width="1398" height="246" key="GridCell.Tab.0.right" timestamp="1583682795932">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="280" key="GridCell.Tab.0.right" timestamp="1583839068306">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="280" key="GridCell.Tab.0.right/0.0.1440.852@0.0.1440.852" timestamp="1583839068306" />
     <state width="1398" height="358" key="GridCell.Tab.0.right/0.23.1440.827@0.23.1440.827" timestamp="1580042468821" />
     <state width="1398" height="470" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.0.right/0.23.1440.829@0.23.1440.829" timestamp="1583671806392" />
     <state width="1398" height="236" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1583571748147" />
     <state width="1398" height="246" key="GridCell.Tab.0.right/0.23.1440.831@0.23.1440.831" timestamp="1583682795932" />
     <state width="1398" height="174" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1582057671510" />
-    <state width="1398" height="246" key="GridCell.Tab.1.bottom" timestamp="1583682795933">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="441" key="GridCell.Tab.1.bottom" timestamp="1583838850123">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="441" key="GridCell.Tab.1.bottom/0.0.1440.852@0.0.1440.852" timestamp="1583838850123" />
     <state width="1398" height="470" key="GridCell.Tab.1.bottom/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.1.bottom/0.23.1440.829@0.23.1440.829" timestamp="1583671806394" />
     <state width="1398" height="236" key="GridCell.Tab.1.bottom/0.23.1440.830@0.23.1440.830" timestamp="1583571748151" />
     <state width="1398" height="246" key="GridCell.Tab.1.bottom/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.bottom/0.23.1440.832@0.23.1440.832" timestamp="1582036009732" />
-    <state width="1398" height="246" key="GridCell.Tab.1.center" timestamp="1583682795933">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="441" key="GridCell.Tab.1.center" timestamp="1583838850121">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="441" key="GridCell.Tab.1.center/0.0.1440.852@0.0.1440.852" timestamp="1583838850121" />
     <state width="1398" height="470" key="GridCell.Tab.1.center/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.1.center/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.center/0.23.1440.830@0.23.1440.830" timestamp="1583571748150" />
     <state width="1398" height="246" key="GridCell.Tab.1.center/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.center/0.23.1440.832@0.23.1440.832" timestamp="1582036009731" />
-    <state width="1398" height="246" key="GridCell.Tab.1.left" timestamp="1583682795933">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="441" key="GridCell.Tab.1.left" timestamp="1583838850120">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="441" key="GridCell.Tab.1.left/0.0.1440.852@0.0.1440.852" timestamp="1583838850120" />
     <state width="1398" height="470" key="GridCell.Tab.1.left/0.23.1440.828@0.23.1440.828" timestamp="1582982020395" />
     <state width="1398" height="246" key="GridCell.Tab.1.left/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.left/0.23.1440.830@0.23.1440.830" timestamp="1583571748148" />
     <state width="1398" height="246" key="GridCell.Tab.1.left/0.23.1440.831@0.23.1440.831" timestamp="1583682795933" />
     <state width="1398" height="56" key="GridCell.Tab.1.left/0.23.1440.832@0.23.1440.832" timestamp="1582036009731" />
-    <state width="1398" height="246" key="GridCell.Tab.1.right" timestamp="1583682795933">
-      <screen x="0" y="23" width="1440" height="831" />
+    <state width="1398" height="441" key="GridCell.Tab.1.right" timestamp="1583838850122">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state width="1398" height="441" key="GridCell.Tab.1.right/0.0.1440.852@0.0.1440.852" timestamp="1583838850122" />
     <state width="1398" height="470" key="GridCell.Tab.1.right/0.23.1440.828@0.23.1440.828" timestamp="1582982020396" />
     <state width="1398" height="246" key="GridCell.Tab.1.right/0.23.1440.829@0.23.1440.829" timestamp="1583671806393" />
     <state width="1398" height="236" key="GridCell.Tab.1.right/0.23.1440.830@0.23.1440.830" timestamp="1583571748151" />
@@ -1010,9 +1021,10 @@
     <state x="229" y="23" width="1024" height="829" key="SettingsEditor/0.23.1440.829@0.23.1440.829" timestamp="1581712022951" />
     <state x="229" y="23" width="1024" height="830" key="SettingsEditor/0.23.1440.830@0.23.1440.830" timestamp="1581499055297" />
     <state x="229" y="23" width="1024" height="831" key="SettingsEditor/0.23.1440.831@0.23.1440.831" timestamp="1581081334620" />
-    <state x="321" y="182" key="Vcs.Push.Dialog.v2" timestamp="1583507602595">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="321" y="163" key="Vcs.Push.Dialog.v2" timestamp="1583837045909">
+      <screen x="0" y="0" width="1440" height="852" />
     </state>
+    <state x="321" y="163" key="Vcs.Push.Dialog.v2/0.0.1440.852@0.0.1440.852" timestamp="1583837045909" />
     <state x="321" y="181" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1579686158125" />
     <state x="321" y="181" key="Vcs.Push.Dialog.v2/0.23.1440.827@0.23.1440.827" timestamp="1579254994672" />
     <state x="321" y="182" key="Vcs.Push.Dialog.v2/0.23.1440.829@0.23.1440.829" timestamp="1583507602595" />
@@ -1027,13 +1039,14 @@
     </state>
     <state x="526" y="223" key="chooseDestDirectoryDialog/0.23.1440.830@0.23.1440.830" timestamp="1581106863149" />
     <state x="526" y="223" key="chooseDestDirectoryDialog/0.23.1440.831@0.23.1440.831" timestamp="1581184317235" />
-    <state x="409" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1583836811917">
+    <state x="409" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1584427209211">
       <screen x="0" y="23" width="1440" height="829" />
     </state>
+    <state x="409" y="247" key="com.intellij.ide.util.TipDialog/0.0.1440.852@0.0.1440.852" timestamp="1584354119868" />
     <state x="409" y="262" key="com.intellij.ide.util.TipDialog/0.23.1440.825@0.23.1440.825" timestamp="1579937595081" />
     <state x="409" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.827@0.23.1440.827" timestamp="1580417779417" />
     <state x="409" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.828@0.23.1440.828" timestamp="1579254606985" />
-    <state x="409" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1583836811917" />
+    <state x="409" y="263" key="com.intellij.ide.util.TipDialog/0.23.1440.829@0.23.1440.829" timestamp="1584427209211" />
     <state x="409" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.830@0.23.1440.830" timestamp="1583059237508" />
     <state x="409" y="264" key="com.intellij.ide.util.TipDialog/0.23.1440.831@0.23.1440.831" timestamp="1582998917017" />
     <state x="409" y="265" key="com.intellij.ide.util.TipDialog/0.23.1440.832@0.23.1440.832" timestamp="1582056902239" />
