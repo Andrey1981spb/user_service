@@ -9,7 +9,7 @@
         <fileset id="web mvc-dispatcher servlet context" name="MVC mvc-dispatcher servlet context" removed="true">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-mvc.xml</file>
         </fileset>
-        <fileset id="fileset" name="Spring Application Context2" removed="false">
+        <fileset id="fileset" name="Spring Application Context2" removed="false" profiles="local">
           <file>file://$MODULE_DIR$/src/main/java/ru/spb/dreamwhite/config/MailProvider.java</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-app.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-db.xml</file>

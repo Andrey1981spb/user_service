@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import ru.spb.dreamwhite.model.User;
 
-import static ru.spb.dreamwhite.web.UserRestController.REST_URL;
+import static ru.spb.dreamwhite.web.UserRestController.USER_URL;
 
 @Component
 public class CustomEventPublisher {
@@ -14,7 +14,7 @@ public class CustomEventPublisher {
     private ApplicationEventPublisher applicationEventPublisher;
 
     public void doStuffAndPublishAnEvent(User user) {
-        OnPostUserDataEvent onPostUserDataEvent = new OnPostUserDataEvent(user, REST_URL);
+        OnPostUserDataEvent onPostUserDataEvent = new OnPostUserDataEvent(user, USER_URL);
         applicationEventPublisher.publishEvent(onPostUserDataEvent);
     }
 

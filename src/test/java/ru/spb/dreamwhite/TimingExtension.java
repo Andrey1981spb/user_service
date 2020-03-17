@@ -15,7 +15,6 @@ public class TimingExtension implements
     @Override
     public void beforeAll(ExtensionContext extensionContext) throws Exception {
         stopWatch = new StopWatch("Execution time of " + extensionContext.getRequiredTestClass().getSimpleName());
-
     }
 
     @Override

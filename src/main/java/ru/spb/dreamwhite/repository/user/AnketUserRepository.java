@@ -39,8 +39,7 @@ public class AnketUserRepository implements UserRepository {
         return crudRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public List<User> getByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
+    public List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
         String email = paramsMap.get("email");
         String locale = paramsMap.get("locale");
         String phone = Formatter.formate(paramsMap.get("phone"), CountryHandler.countryHandle(locale));

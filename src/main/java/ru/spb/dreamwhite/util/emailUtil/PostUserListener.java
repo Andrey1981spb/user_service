@@ -44,7 +44,7 @@ public class PostUserListener implements ApplicationListener<OnPostUserDataEvent
         String url = onPostUserDataEvent.getAppUrl();
         String message = "Спасибо за регистрацию! Пожалуйста перейдите по нижеуказанной ссылке для активации Вашего аккаунта";
 
-/*
+/* to be applied, when email will be at dreamwhite-mailbox.
         email.setTo(recipient);
         email.setSubject(subject);
         email.setText(message + "http://localhost:8080" + url);
@@ -63,7 +63,6 @@ public class PostUserListener implements ApplicationListener<OnPostUserDataEvent
             request.setMethod(Method.POST);
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
-            Response response = this.sendGrid.api(request);
             sendGrid.api(request);
 
         } catch (IOException ex) {

@@ -14,7 +14,7 @@ import ru.spb.dreamwhite.model.User;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import static ru.spb.dreamwhite.web.TestRegistrationController.TEST_CONFIRM_REGISTRATION_URL;
+import static ru.spb.dreamwhite.web.RootController.HOSTNAME;
 
 @Component
 public class MailSend {
@@ -23,16 +23,18 @@ public class MailSend {
     private SendGrid sendGrid;
 
     private static final Logger LOGGER = Logger.getLogger(MailSend.class.getName());
+    public static String CONFIRM_REGISTRATION_ENDPOINT = null;
 
     public boolean sendMail(User user, Token token) {
+
         String recipient = user.getEmail();
         String subject = "Registration Confirmation";
-        String url = "/test" + TEST_CONFIRM_REGISTRATION_URL + "?token=" + token.getToken();
+        String url = CONFIRM_REGISTRATION_ENDPOINT + "?token=" + token.getToken();
         String message = "Спасибо за регистрацию! Пожалуйста перейдите по нижеуказанной ссылке для активации Вашего аккаунта: ";
 
         Email from = new Email("no-reply@dreamwhite.ru");
         Email to = new Email(recipient);
-        Content content = new Content("text/plain", message + "http://localhost:8080" + url);
+        Content content = new Content("text/plain", message + "http://" + HOSTNAME + url);
         Mail mail = new Mail(from, subject, to, content);
 
         Request request = new Request();

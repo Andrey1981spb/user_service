@@ -5,7 +5,6 @@ import ru.spb.dreamwhite.model.User;
 
 public class OnPostUserDataEvent extends ApplicationEvent {
 
-    // https://medium.com/@angela.amarapala/sending-email-confirmation-for-account-activation-with-spring-java-cc3f5bb1398e
     private static final long serialVersionUID = 1L;
     private String appUrl;
 

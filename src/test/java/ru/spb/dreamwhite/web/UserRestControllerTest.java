@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import ru.spb.dreamwhite.TestData;
+import ru.spb.dreamwhite.UserTestData;
 import ru.spb.dreamwhite.TestUtil;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.service.UserService;
@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static ru.spb.dreamwhite.TestData.*;
+import static ru.spb.dreamwhite.UserTestData.*;
 import static ru.spb.dreamwhite.TestUtil.contentJson;
-import static ru.spb.dreamwhite.web.UserRestController.REST_URL;
+import static ru.spb.dreamwhite.web.UserRestController.USER_URL;
 
 public class UserRestControllerTest extends AbstractControllerTest {
 
@@ -25,7 +25,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
     private UserService userService;
 
     UserRestControllerTest() {
-        super(REST_URL);
+        super(USER_URL);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
 
     @Test
     void createWithLocation() throws Exception {
-        User createdUser = TestData.getNew();
+        User createdUser = UserTestData.getNew();
         ResultActions action = perform(doPost().jsonBody(createdUser))
                 .andExpect(status().isCreated());
 
@@ -68,7 +68,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
 
     @Test
     void update() throws Exception {
-        User updated = TestData.getUpdated();
+        User updated = UserTestData.getUpdated();
         perform(doPut(USER_ID).jsonBody(updated))
                 .andExpect(status().isNoContent());
 
@@ -77,11 +77,10 @@ public class UserRestControllerTest extends AbstractControllerTest {
 
     @Test
     void getByParametersOrAll() throws Exception {
-        perform(MockMvcRequestBuilders.get(REST_URL + "?phone=+78122347391"))
+        perform(MockMvcRequestBuilders.get(USER_URL + "?phone=+78122347391"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(contentJson(USER3));
     }
-
 
 }

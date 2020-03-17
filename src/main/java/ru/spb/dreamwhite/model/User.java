@@ -6,6 +6,7 @@ import ru.spb.dreamwhite.util.phoneUtil.ContactNumberConstraint;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
+import java.util.*;
 
 @ContactNumberConstraint.List({
         @ContactNumberConstraint(
@@ -28,16 +29,12 @@ public class User {
     @Size(max = 100)
     private String name;
 
-   // @Column(name = "last_name", nullable = false)
-  //  @Size(max = 100)
-  //  private String lastName;
-
     @Column(name = "email", nullable = false)
     @Email
     @Size(max = 100)
     private String email;
 
-  //  @ContactNumberFormat
+    //  @ContactNumberFormat
     @Column(name = "phone", nullable = false, unique = true)
     @Size(max = 50)
     private String phone;
@@ -46,28 +43,36 @@ public class User {
     @Size(max = 50)
     private String locale;
 
+    @Column(name = "city")
+    private String city;
+
     @Column(name = "short_code")
-    @Size(max=4)
+    @Size(max = 4)
     private String short_code;
 
-    @Column(name="email_valid")
+    @Column(name = "email_valid")
     private boolean email_valid;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Tracker> trakers;
 
     public User() {
     }
 
     public User(User u) {
-        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getShort_code(), u.isEmail_valid());
+        this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getCity(), u.getShort_code(), u.isEmail_valid(), u.getTrakers());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale, String short_code, boolean email_valid) {
+    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid, Tracker tracker, Tracker... trackers) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.locale = locale;
+        this.city = city;
         this.short_code = short_code;
         this.email_valid = email_valid;
+        this.trakers = Arrays.asList(tracker, trackers);
     }
 
     public String getEmail() {
@@ -126,6 +131,22 @@ public class User {
         this.email_valid = email_valid;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public List<Tracker> getTrakers() {
+        return trakers;
+    }
+
+    public void setTrakers(Collection<Tracker> trakers) {
+        this.trakers = Arrays.copyOf;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -134,6 +155,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", locale='" + locale + '\'' +
+                ", city='" + city + '\'' +
                 ", short_code='" + short_code + '\'' +
                 ", email_valid='" + email_valid + '\'' +
                 '}';
