@@ -105,7 +105,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rest_phone_valid" />
+        <entry key="$PROJECT_DIR$" value="email_handler" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -843,13 +843,13 @@
     </state>
     <state x="458" y="192" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.830@0.23.1440.830" timestamp="1581508089366" />
     <state x="458" y="192" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.831@0.23.1440.831" timestamp="1581081192508" />
-    <state x="194" y="60" key="CommitChangelistDialog2" timestamp="1583837034842">
-      <screen x="0" y="0" width="1440" height="852" />
+    <state x="203" y="111" key="CommitChangelistDialog2" timestamp="1584427222205">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="194" y="60" key="CommitChangelistDialog2/0.0.1440.852@0.0.1440.852" timestamp="1583837034842" />
     <state x="328" y="145" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1579686041399" />
     <state x="328" y="145" key="CommitChangelistDialog2/0.23.1440.827@0.23.1440.827" timestamp="1579254984062" />
-    <state x="203" y="111" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1583507703814" />
+    <state x="203" y="111" key="CommitChangelistDialog2/0.23.1440.829@0.23.1440.829" timestamp="1584427222205" />
     <state x="194" y="81" key="CommitChangelistDialog2/0.23.1440.830@0.23.1440.830" timestamp="1583571154420" />
     <state x="328" y="146" key="CommitChangelistDialog2/0.23.1440.831@0.23.1440.831" timestamp="1579344682455" />
     <state x="505" y="135" key="ExecutionTargetDialog" timestamp="1583227958692">
@@ -1064,14 +1064,14 @@
       <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state x="516" y="236" key="git4idea.merge.GitMergeDialog/0.23.1440.830@0.23.1440.830" timestamp="1583570914403" />
-    <state x="439" y="239" key="git4idea.merge.GitPullDialog" timestamp="1583571176787">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="439" y="239" key="git4idea.merge.GitPullDialog" timestamp="1584427289274">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
     <state x="439" y="222" key="git4idea.merge.GitPullDialog/0.0.1440.853@0.0.1440.853" timestamp="1581663331570" />
     <state x="439" y="238" key="git4idea.merge.GitPullDialog/0.23.1440.825@0.23.1440.825" timestamp="1579934843565" />
     <state x="439" y="239" key="git4idea.merge.GitPullDialog/0.23.1440.827@0.23.1440.827" timestamp="1580417808830" />
     <state x="439" y="239" key="git4idea.merge.GitPullDialog/0.23.1440.828@0.23.1440.828" timestamp="1579286409563" />
-    <state x="439" y="239" key="git4idea.merge.GitPullDialog/0.23.1440.829@0.23.1440.829" timestamp="1583217477967" />
+    <state x="439" y="239" key="git4idea.merge.GitPullDialog/0.23.1440.829@0.23.1440.829" timestamp="1584427289274" />
     <state x="439" y="239" key="git4idea.merge.GitPullDialog/0.23.1440.830@0.23.1440.830" timestamp="1583571176787" />
     <state x="439" y="240" key="git4idea.merge.GitPullDialog/0.23.1440.831@0.23.1440.831" timestamp="1581094827615" />
     <state x="544" y="326" key="git4idea.ui.GitStashDialog" timestamp="1581663384343">
