@@ -51,9 +51,13 @@ public class UserService {
         checkNotFoundWithId(repository.delete(id), id);
     }
 
-    public User get(int id) {
-        return checkNotFoundWithId(repository.get(id), id);
+    public User getByIdWithoutTrackers(int id) {
+        return checkNotFoundWithId(repository.getByIdWithoutTrackers(id), id);
     }
+
+    public User getByIdWithTrackers(int id){
+        return repository.getByIdWithTrackers(id);
+    };
 
     public List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
         List<User> users = repository.getUserByParameterOrAll(paramsMap);

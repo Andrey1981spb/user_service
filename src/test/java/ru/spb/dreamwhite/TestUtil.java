@@ -2,7 +2,6 @@ package ru.spb.dreamwhite;
 
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.ResultMatcher;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.web.json.JsonUtil;
 
@@ -31,10 +30,6 @@ public class TestUtil {
 
     public static <T> List<T> readListFromJsonMvcResult(MvcResult result, Class<T> clazz) throws UnsupportedEncodingException {
         return JsonUtil.readValues(getContent(result), clazz);
-    }
-
-    public static ResultMatcher contentJson(User expected) {
-        return result -> assertMatch(readFromJsonMvcResult(result, User.class), expected);
     }
 
 }

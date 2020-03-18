@@ -1,5 +1,6 @@
 package ru.spb.dreamwhite.repository.user;
 
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,5 +18,9 @@ public interface CrudUserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Query ("DELETE FROM User u WHERE u.id=:id")
     int delete (@Param("id") int id);
+
+    @EntityGraph (attributePaths = {"trackers"}, type = EntityGraph.EntityGraphType.LOAD)
+    @Query("SELECT u FROM User u WHERE u.id=?1")
+    User getByIdWithTrackers(int id);
 
 }

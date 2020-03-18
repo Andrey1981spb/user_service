@@ -18,6 +18,7 @@
 
     <tx:annotation-driven/>
 
+
     <jdbc:initialize-database data-source="dataSource">
         <jdbc:script location="classpath:db/initDB.sql"/>
         <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
@@ -28,7 +29,7 @@
     <bean id="dataSource"
           class="org.apache.tomcat.jdbc.pool.DataSource"
           p:driverClassName="org.postgresql.Driver"
-          p:url="#{inetAddress.getLocalHost().getHostName().equals('andrej-HP-290-G1-SFF-Business-PC')?'jdbc:postgresql://localhost:5432/infostock':'jdbc:postgresql://172.18.0.2:5432/infostock'}"
+          p:url="#{inetAddress.getLocalHost().getHostName().equals('MacBook-Pro-Andrej.local')?'jdbc:postgresql://localhost:5432/infostock':'jdbc:postgresql://172.18.0.2:5432/infostock'}"
           p:username="${database.user}"
           p:password="${database.password}"/>
 
@@ -44,8 +45,8 @@
                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).JPA_PROXY_COMPLIANCE}" value="false"/>
                 <entry key="#{T(org.hibernate.cfg.AvailableSettings).DIALECT}"
                        value="org.hibernate.dialect.PostgreSQL9Dialect"/>
-                <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="update"/>
-                <!--  <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>-->
+                <!--  <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="create"/>-->
+                  <!--  <entry key="#{T(org.hibernate.cfg.AvailableSettings).HBM2DDL_AUTO}" value="${hibernate.hbm2ddl.auto}"/>-->
             </map>
         </property>
 

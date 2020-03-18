@@ -30,8 +30,13 @@ public class UserRestController extends AbstractUserController {
     }
 
     @GetMapping("/{id}")
-    public User get(@PathVariable int id) {
-        return super.get(id);
+    public User getByIdWithoutTrackers(@PathVariable int id) {
+        return super.getByIdWithoutTrackers(id);
+    }
+
+    @GetMapping("/{id}/withTrackers")
+    public User getByIdWithTrackers(@PathVariable int id) {
+        return super.getByIdWithTrackers(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

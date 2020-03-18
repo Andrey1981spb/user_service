@@ -16,7 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static ru.spb.dreamwhite.UserTestData.*;
-import static ru.spb.dreamwhite.TestUtil.contentJson;
 import static ru.spb.dreamwhite.web.UserRestController.USER_URL;
 
 public class UserRestControllerTest extends AbstractControllerTest {
@@ -29,7 +28,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
     }
 
     @Test
-    void get() throws Exception {
+    void getByIdWithoutTrackers() throws Exception {
         perform(doGet(USER_ID))
                 .andExpect(status().isOk())
                 .andDo(print())
@@ -47,7 +46,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
         Integer newId = created.getId();
         createdUser.setId(newId);
         USER_MATCHERS.assertMatch(created, createdUser);
-        USER_MATCHERS.assertMatch(userService.get(newId), createdUser);
+        USER_MATCHERS.assertMatch(userService.getByIdWithoutTrackers(newId), createdUser);
     }
 
     @Test
@@ -55,7 +54,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
         perform(doDelete(USER_ID))
                 .andDo(print())
                 .andExpect(status().isNoContent());
-        assertThrows(NotFoundException.class, () -> userService.get(USER_ID));
+        assertThrows(NotFoundException.class, () -> userService.getByIdWithoutTrackers(USER_ID));
     }
 
     @Test
@@ -72,7 +71,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
         perform(doPut(USER_ID).jsonBody(updated))
                 .andExpect(status().isNoContent());
 
-        USER_MATCHERS.assertMatch(userService.get(USER_ID), updated);
+        USER_MATCHERS.assertMatch(userService.getByIdWithoutTrackers(USER_ID), updated);
     }
 
     @Test
@@ -80,7 +79,7 @@ public class UserRestControllerTest extends AbstractControllerTest {
         perform(MockMvcRequestBuilders.get(USER_URL + "?phone=+78122347391"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(contentJson(USER3));
+                .andExpect(USER_MATCHERS.contentJson(USER3));
     }
 
 }

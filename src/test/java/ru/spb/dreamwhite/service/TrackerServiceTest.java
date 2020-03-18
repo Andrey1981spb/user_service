@@ -58,4 +58,17 @@ public class TrackerServiceTest {
         TRACKER_MATCHERS.assertMatch(tracker, TRACKER1);
     }
 
+    @Test
+    public void getByNameOfTracker() throws Exception {
+        paramsMap.put("name", "Yandex");
+        Tracker tracker = trackerService.getTrackerParameterOrAll(paramsMap).get(0);
+        TRACKER_MATCHERS.assertMatch(tracker, TRACKER1);
+    }
+
+    @Test
+    public void getAll() throws Exception {
+        Tracker tracker = trackerService.getTrackerParameterOrAll(paramsMap).get(0);
+        TRACKER_MATCHERS.assertMatch(tracker, TRACKER1);
+    }
+
 }

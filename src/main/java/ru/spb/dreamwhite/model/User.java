@@ -43,15 +43,16 @@ public class User {
     @Size(max = 50)
     private String locale;
 
-    @Column(name = "city")
-    private String city;
-
     @Column(name = "short_code")
     @Size(max = 4)
     private String short_code;
 
     @Column(name = "email_valid")
     private boolean email_valid;
+
+    @Column(name = "city")
+    @Size(max = 50)
+    private String city;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private List<Tracker> trakers;

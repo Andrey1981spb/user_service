@@ -11,4 +11,5 @@ INSERT INTO users (name, email, phone, locale, city, short_code, email_valid) VA
 ('Alex3', 'gmail@gmail.com', '+78122347398', 'Россия', 'Санкт-Петербург','RU', true);
 
 INSERT INTO trackers (name, value, user_id) VALUES
-('Yandex', 'dfvdfv6d79dfvdfv09d0vd', 1);
+('Yandex', 'dfvdfv6d79dfvdfv09d0vd', 1),
+('Yandex', 'ervevvcsdfvcdscvsdcvsd', 1);

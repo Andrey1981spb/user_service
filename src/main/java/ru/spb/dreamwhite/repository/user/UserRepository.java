@@ -17,7 +17,9 @@ public interface UserRepository {
     boolean delete(int id);
 
     // null if not found
-    User get(int id);
+    User getByIdWithoutTrackers(int id);
+
+    User getByIdWithTrackers(int id);
 
     List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException;
 

@@ -40,7 +40,7 @@ public class UserServiceTest {
         Integer newId = created.getId();
         newUser.setId(newId);
         USER_MATCHERS.assertMatch(created, newUser);
-        USER_MATCHERS.assertMatch(userService.get(newId), newUser);
+        USER_MATCHERS.assertMatch(userService.getByIdWithoutTrackers(newId), newUser);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class UserServiceTest {
         Integer newId = created.getId();
         User userWithFormattedPhone = getNew();
         userWithFormattedPhone.setId(newId);
-        USER_MATCHERS.assertMatch(userService.get(newId), userWithFormattedPhone);
+        USER_MATCHERS.assertMatch(userService.getByIdWithoutTrackers(newId), userWithFormattedPhone);
     }
 
     @Test

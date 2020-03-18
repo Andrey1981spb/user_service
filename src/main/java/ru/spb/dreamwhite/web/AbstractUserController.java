@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.PathVariable;
 import ru.spb.dreamwhite.model.User;
 import ru.spb.dreamwhite.service.UserService;
 
@@ -20,9 +21,13 @@ public abstract class AbstractUserController {
     @Autowired
     protected UserService service;
 
-    public User get(int id) {
+    public User getByIdWithoutTrackers(int id) {
         log.info("get {}", id);
-        return service.get(id);
+        return service.getByIdWithoutTrackers(id);
+    }
+
+    public User getByIdWithTrackers(int id) {
+        return service.getByIdWithTrackers(id);
     }
 
     public User create(User user) throws NumberParseException, MethodArgumentNotValidException {

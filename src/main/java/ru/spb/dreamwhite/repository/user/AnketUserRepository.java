@@ -35,9 +35,14 @@ public class AnketUserRepository implements UserRepository {
     }
 
     @Override
-    public User get(int id) {
+    public User getByIdWithoutTrackers(int id) {
         return crudRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public User getByIdWithTrackers(int id){
+        return crudRepository.getByIdWithTrackers(id);
+    };
 
     public List<User> getUserByParameterOrAll(Map<String, String> paramsMap) throws NumberParseException {
         String email = paramsMap.get("email");
