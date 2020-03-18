@@ -4,7 +4,6 @@ import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
 import org.springframework.beans.BeanWrapperImpl;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import ru.spb.dreamwhite.repository.country.CountryMapStore;
 
 import javax.validation.ConstraintValidator;
@@ -69,26 +68,29 @@ public class ContactNumberValidator implements
             catch (ConstraintViolationException e){
                 e.getMessage();
             }
-
             logger.info(phoneNumberProto + " valid is " + isValid);
 
-            if (phoneNumberProto.hasCountryCode()) {
-                logger.info("Country code is present: " + phoneNumberProto.getCountryCode());
-            } else {
-                logger.info("Country code is not present.");
-            }
-
-            if (phoneNumberProto.hasNationalNumber()) {
-                logger.info("National number is present: " + phoneNumberProto.getNationalNumber());
-            } else {
-                logger.info("National number is not present.");
-            }
+            showLogMessage(phoneNumberProto);
 
         } catch (NumberParseException e) {
             logger.info(e.getMessage());
         }
 
         return isValid;
+    }
+
+    private static void showLogMessage (Phonenumber.PhoneNumber phoneNumberProto){
+        if (phoneNumberProto.hasCountryCode()) {
+            logger.info("Country code is present: " + phoneNumberProto.getCountryCode());
+        } else {
+            logger.info("Country code is not present.");
+        }
+        if (phoneNumberProto.hasNationalNumber()) {
+            logger.info("National number is present: " + phoneNumberProto.getNationalNumber());
+        } else {
+            logger.info("National number is not present.");
+        }
+
     }
 
 }

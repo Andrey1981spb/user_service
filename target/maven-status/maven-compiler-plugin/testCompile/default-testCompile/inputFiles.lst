@@ -1,7 +1,9 @@
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TestUtil.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TimingExtension.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/service/ServiceTest.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/web/AbstractControllerTest.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TestData.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/web/UserRestControllerTest.java
-/home/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TestMatchers.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TimingExtension.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TestMatchers.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TestUtil.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/service/TrackerServiceTest.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/web/UserRestControllerTest.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/TrackerTestData.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/UserTestData.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/web/AbstractControllerTest.java
+/Users/andrej/IdeaProjects/user_service/src/test/java/ru/spb/dreamwhite/service/UserServiceTest.java

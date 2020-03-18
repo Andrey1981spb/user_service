@@ -195,7 +195,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
-            <version>4.3.8.RELEASE</version>
+            <version>5.2.4.RELEASE</version>
         </dependency>
 
         <!--Validation-->

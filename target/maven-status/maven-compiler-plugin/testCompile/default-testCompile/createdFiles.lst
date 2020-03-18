@@ -1,8 +1,10 @@
-ru/spb/dreamwhite/TestData.class
+ru/spb/dreamwhite/service/TrackerServiceTest.class
 ru/spb/dreamwhite/TimingExtension.class
+ru/spb/dreamwhite/TrackerTestData.class
 ru/spb/dreamwhite/web/AbstractControllerTest$RequestWrapper.class
 ru/spb/dreamwhite/TestMatchers.class
 ru/spb/dreamwhite/TestUtil.class
-ru/spb/dreamwhite/service/ServiceTest.class
+ru/spb/dreamwhite/service/UserServiceTest.class
+ru/spb/dreamwhite/UserTestData.class
 ru/spb/dreamwhite/web/AbstractControllerTest.class
 ru/spb/dreamwhite/web/UserRestControllerTest.class

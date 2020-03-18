@@ -2,17 +2,17 @@
 <dataSource name="infostock@localhost">
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.17">
     <root id="1">
-      <ServerVersion>12.1</ServerVersion>
-      <StartupTime>1584352787</StartupTime>
+      <ServerVersion>12.2</ServerVersion>
+      <StartupTime>1584516806</StartupTime>
     </root>
     <database id="2" parent="1" name="infostock">
-      <ObjectId>29055</ObjectId>
+      <ObjectId>16384</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>3477</IntrospectionStateNumber>
+      <IntrospectionStateNumber>526</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
-      <ObjectId>13434</ObjectId>
+      <ObjectId>13688</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
     </database>
@@ -47,14 +47,14 @@
     <role id="13" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
-      <CreateDb>1</CreateDb>
       <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
       <CanLogin>1</CanLogin>
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
     <schema id="14" parent="2" name="information_schema">
-      <ObjectId>13134</ObjectId>
+      <ObjectId>13388</ObjectId>
       <StateNumber>281</StateNumber>
       <Owner>postgres</Owner>
     </schema>
@@ -69,7 +69,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>275</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>3478</IntrospectionStateNumber>
+      <IntrospectionStateNumber>527</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="17" parent="2" name="heap">
@@ -128,292 +128,239 @@
       <Type>index</Type>
     </access-method>
     <extension id="24" parent="2" name="plpgsql">
-      <ObjectId>13420</ObjectId>
+      <ObjectId>13674</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>436</StateNumber>
       <Version>1.0</Version>
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <language id="25" parent="2" name="c"/>
-    <language id="26" parent="2" name="internal"/>
-    <language id="27" parent="2" name="plpgsql"/>
-    <language id="28" parent="2" name="sql"/>
-    <sequence id="29" parent="16" name="global_seq">
-      <ObjectId>29083</ObjectId>
-      <StateNumber>3143</StateNumber>
+    <sequence id="25" parent="16" name="global_seq">
+      <ObjectId>16405</ObjectId>
+      <StateNumber>496</StateNumber>
       <Owner>dreamwhite</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <sequence id="30" parent="16" name="token_seq">
-      <ObjectId>29853</ObjectId>
-      <StateNumber>3470</StateNumber>
+    <sequence id="26" parent="16" name="token_seq">
+      <ObjectId>16443</ObjectId>
+      <StateNumber>521</StateNumber>
       <Owner>dreamwhite</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <sequence id="31" parent="16" name="tracker_seq">
-      <ObjectId>29855</ObjectId>
-      <StateNumber>3470</StateNumber>
+    <sequence id="27" parent="16" name="userseq">
+      <ObjectId>16441</ObjectId>
+      <StateNumber>520</StateNumber>
       <Owner>dreamwhite</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <sequence id="32" parent="16" name="userseq">
-      <ObjectId>29851</ObjectId>
-      <StateNumber>3470</StateNumber>
+    <table id="28" parent="16" name="codes">
+      <ObjectId>16386</ObjectId>
       <Owner>dreamwhite</Owner>
-      <SequenceIdentity>1</SequenceIdentity>
-      <CacheSize>1</CacheSize>
-      <DataType>bigint</DataType>
-    </sequence>
-    <table id="33" parent="16" name="codes">
-      <ObjectId>29056</ObjectId>
-      <Owner>dreamwhite</Owner>
-      <StateNumber>3135</StateNumber>
+      <StateNumber>489</StateNumber>
     </table>
-    <table id="34" parent="16" name="tokens">
-      <ObjectId>29867</ObjectId>
+    <table id="29" parent="16" name="tokens">
+      <ObjectId>16455</ObjectId>
       <Owner>dreamwhite</Owner>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
     </table>
-    <table id="35" parent="16" name="trackers">
-      <ObjectId>29881</ObjectId>
+    <table id="30" parent="16" name="trackers">
+      <ObjectId>16471</ObjectId>
       <Owner>dreamwhite</Owner>
-      <StateNumber>3465</StateNumber>
+      <StateNumber>525</StateNumber>
     </table>
-    <table id="36" parent="16" name="users">
-      <ObjectId>29857</ObjectId>
+    <table id="31" parent="16" name="users">
+      <ObjectId>16445</ObjectId>
       <Owner>dreamwhite</Owner>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
     </table>
-    <column id="37" parent="33" name="id">
+    <column id="32" parent="28" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3135</StateNumber>
+      <StateNumber>489</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="33" name="code">
+    <column id="33" parent="28" name="code">
       <Position>2</Position>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3135</StateNumber>
+      <StateNumber>489</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="39" parent="33" name="title">
+    <column id="34" parent="28" name="title">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3135</StateNumber>
+      <StateNumber>489</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="40" parent="33" name="codes_pkey">
-      <ObjectId>29059</ObjectId>
-      <StateNumber>3135</StateNumber>
+    <index id="35" parent="28" name="codes_pkey">
+      <ObjectId>16389</ObjectId>
+      <StateNumber>489</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="41" parent="33" name="uk_h6jpb1iyeu677uqa6w2fohm0s">
-      <ObjectId>29079</ObjectId>
-      <StateNumber>3140</StateNumber>
+    <index id="36" parent="28" name="uk_h6jpb1iyeu677uqa6w2fohm0s">
+      <ObjectId>16401</ObjectId>
+      <StateNumber>493</StateNumber>
       <ColNames>title</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="33" name="codes_pkey">
-      <ObjectId>29060</ObjectId>
-      <StateNumber>3135</StateNumber>
+    <key id="37" parent="28" name="codes_pkey">
+      <ObjectId>16390</ObjectId>
+      <StateNumber>489</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>codes_pkey</UnderlyingIndexName>
     </key>
-    <key id="43" parent="33" name="uk_h6jpb1iyeu677uqa6w2fohm0s">
-      <ObjectId>29080</ObjectId>
-      <StateNumber>3140</StateNumber>
+    <key id="38" parent="28" name="uk_h6jpb1iyeu677uqa6w2fohm0s">
+      <ObjectId>16402</ObjectId>
+      <StateNumber>493</StateNumber>
       <ColNames>title</ColNames>
       <UnderlyingIndexName>uk_h6jpb1iyeu677uqa6w2fohm0s</UnderlyingIndexName>
     </key>
-    <column id="44" parent="34" name="id">
+    <column id="39" parent="29" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
       <DefaultExpression>nextval(&apos;token_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="34" name="token">
+    <column id="40" parent="29" name="token">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="46" parent="34" name="created_date">
+    <column id="41" parent="29" name="created_date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="47" parent="34" name="expiry_date">
+    <column id="42" parent="29" name="expiry_date">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3464</StateNumber>
+      <StateNumber>519</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="48" parent="34" name="tokens_pkey">
-      <ObjectId>29874</ObjectId>
-      <StateNumber>3464</StateNumber>
+    <index id="43" parent="29" name="tokens_pkey">
+      <ObjectId>16462</ObjectId>
+      <StateNumber>519</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="49" parent="34" name="tokens_pkey">
-      <ObjectId>29875</ObjectId>
-      <StateNumber>3464</StateNumber>
+    <key id="44" parent="29" name="tokens_pkey">
+      <ObjectId>16463</ObjectId>
+      <StateNumber>519</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>tokens_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="50" parent="34" name="tokens_id_fkey">
-      <ObjectId>29876</ObjectId>
-      <StateNumber>3464</StateNumber>
+    <foreign-key id="45" parent="29" name="tokens_id_fkey">
+      <ObjectId>16464</ObjectId>
+      <StateNumber>519</StateNumber>
       <ColNames>id</ColNames>
-      <RefTableId>29857</RefTableId>
+      <RefTableId>16445</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="51" parent="35" name="id">
+    <column id="46" parent="30" name="name">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>3465</StateNumber>
-      <DefaultExpression>nextval(&apos;tracker_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>525</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="52" parent="35" name="name">
+    <column id="47" parent="30" name="value">
       <Position>2</Position>
-      <DataType>varchar|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>3465</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="53" parent="35" name="value">
-      <Position>3</Position>
-      <DataType>varchar|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>3465</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="54" parent="35" name="user_id">
-      <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>3465</StateNumber>
+      <StateNumber>525</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="55" parent="35" name="trackers_pkey">
-      <ObjectId>29888</ObjectId>
-      <StateNumber>3465</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <key id="56" parent="35" name="trackers_pkey">
-      <ObjectId>29889</ObjectId>
-      <StateNumber>3465</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>trackers_pkey</UnderlyingIndexName>
-    </key>
-    <foreign-key id="57" parent="35" name="trackers_user_id_fkey">
-      <ObjectId>29890</ObjectId>
-      <StateNumber>3465</StateNumber>
-      <ColNames>user_id</ColNames>
-      <RefTableId>29857</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>users</RefTableName>
-      <RefKeyName>users_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="58" parent="36" name="id">
+    <column id="48" parent="30" name="user_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>525</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="49" parent="31" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <DefaultExpression>nextval(&apos;userseq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="59" parent="36" name="name">
+    <column id="50" parent="31" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="60" parent="36" name="email">
+    <column id="51" parent="31" name="email">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="61" parent="36" name="phone">
+    <column id="52" parent="31" name="phone">
       <Position>4</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="62" parent="36" name="locale">
+    <column id="53" parent="31" name="locale">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="63" parent="36" name="city">
+    <column id="54" parent="31" name="short_code">
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="64" parent="36" name="short_code">
+    <column id="55" parent="31" name="email_valid">
       <Position>7</Position>
-      <DataType>varchar|0s</DataType>
-      <StateNumber>3462</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="65" parent="36" name="email_valid">
-      <Position>8</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>3462</StateNumber>
+      <StateNumber>517</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="66" parent="36" name="users_pkey">
-      <ObjectId>29864</ObjectId>
-      <StateNumber>3462</StateNumber>
+    <index id="56" parent="31" name="users_pkey">
+      <ObjectId>16452</ObjectId>
+      <StateNumber>517</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="67" parent="36" name="users_unique_phone_idx">
-      <ObjectId>29866</ObjectId>
-      <StateNumber>3463</StateNumber>
+    <index id="57" parent="31" name="users_unique_phone_idx">
+      <ObjectId>16454</ObjectId>
+      <StateNumber>518</StateNumber>
       <ColNames>phone</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="68" parent="36" name="users_pkey">
-      <ObjectId>29865</ObjectId>
-      <StateNumber>3462</StateNumber>
+    <key id="58" parent="31" name="users_pkey">
+      <ObjectId>16453</ObjectId>
+      <StateNumber>517</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

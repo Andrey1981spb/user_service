@@ -22,8 +22,8 @@ import java.util.logging.Logger;
 
 import static ru.spb.dreamwhite.web.UserRestController.USER_URL;
 
-@RestController("trakerRestController")
-@RequestMapping(value = TrackerRestController.TRACKER_URL, produces = MediaType.APPLICATION_JSON_VALUE)
+@RestController ( "trakerRestController" )
+@RequestMapping ( value = TrackerRestController.TRACKER_URL, produces = MediaType.APPLICATION_JSON_VALUE )
 public class TrackerRestController {
 
     private static Logger logger = Logger.getLogger(TrackerRestController.class.getName());
@@ -35,7 +35,7 @@ public class TrackerRestController {
     public TrackerRestController() {
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping ( consumes = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<Tracker> createTracker(@RequestBody Tracker tracker) throws MethodArgumentNotValidException, NumberParseException {
         Tracker createdTracker = trackerService.create(tracker);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -46,22 +46,22 @@ public class TrackerRestController {
                 .body(createdTracker);
     }
 
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping ( "/{id}" )
+    @ResponseStatus ( HttpStatus.NO_CONTENT )
     public void delete(@PathVariable int id) {
         trackerService.delete(id);
     }
 
 
-    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody Tracker tracker, @PathVariable int id) throws NumberParseException, MethodArgumentNotValidException {
+    @PutMapping ( value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE )
+    @ResponseStatus ( value = HttpStatus.NO_CONTENT )
+    public void update(@Valid @RequestBody Tracker tracker, @PathVariable int id) {
         tracker.setId(id);
         trackerService.update(tracker);
     }
 
     @GetMapping
-    public List<Tracker> getTrackerByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException, NumberParseException {
+    public List<Tracker> getTrackerByParameterOrAll(@RequestParam Map<String, String> parameters) throws UnsupportedEncodingException {
         List<Tracker> trackers;
         if (parameters.get("phone") == null) {
             trackers = trackerService.getTrackerParameterOrAll(parameters);

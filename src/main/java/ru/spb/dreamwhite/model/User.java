@@ -63,7 +63,7 @@ public class User {
         this(u.getId(), u.getName(), u.getEmail(), u.getPhone(), u.getLocale(), u.getCity(), u.getShort_code(), u.isEmail_valid(), u.getTrakers());
     }
 
-    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid, Tracker tracker, Tracker... trackers) {
+    public User(Integer id, String name, String email, String phone, String locale, String city, String short_code, boolean email_valid, List<Tracker> trackers) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -72,7 +72,7 @@ public class User {
         this.city = city;
         this.short_code = short_code;
         this.email_valid = email_valid;
-        this.trakers = Arrays.asList(tracker, trackers);
+        this.trakers = trackers;
     }
 
     public String getEmail() {
@@ -143,8 +143,8 @@ public class User {
         return trakers;
     }
 
-    public void setTrakers(Collection<Tracker> trakers) {
-        this.trakers = Arrays.copyOf;
+    public void setTrakers(List<Tracker> trakers) {
+        this.trakers = trakers;
     }
 
     @Override
