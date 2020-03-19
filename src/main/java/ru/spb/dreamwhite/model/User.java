@@ -50,8 +50,8 @@ public class User {
     @Column(name = "email_valid")
     private boolean email_valid;
 
-    @Column(name = "city")
-    @Size(max = 50)
+    @Column(name="city")
+    @Size(max=50)
     private String city;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")

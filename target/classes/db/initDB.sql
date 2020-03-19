@@ -19,7 +19,7 @@ CREATE TABLE users
     locale           VARCHAR,
     short_code       VARCHAR,
     email_valid      BOOLEAN,
-    city             VARCHAR
+    city             VARCHAR                 NOT NULL
 );
 
 CREATE UNIQUE INDEX users_unique_phone_idx ON users (phone);
