@@ -1,11 +1,14 @@
 package ru.spb.dreamwhite.config;
 
 import com.sendgrid.SendGrid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.core.env.Environment;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -17,7 +20,11 @@ import java.util.Properties;
 @ComponentScan(basePackages =
         {"ru.spb.dreamwhite.util.emailUtil",
                 "ru.spb.dreamwhite.model"})
-public class MailProvider {
+@PropertySource("classpath:email/email.properties")
+public class MailConfig {
+
+    @Autowired
+    Environment env;
 
     @Bean(name = "mailSender")
     public MailSender javaMailService() {
@@ -56,6 +63,8 @@ public class MailProvider {
     }
 
     @Bean
-    public SendGrid getSendGrid(){return new SendGrid("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");}
+    public SendGrid getSendGrid(){
+        return new SendGrid(env.getProperty("grid.key"));
+    }
 
 }

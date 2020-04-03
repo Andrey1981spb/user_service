@@ -6,6 +6,7 @@ services:
     build:
       context: .
     image: andrey1981spb/users
+    restart: always
     ports:
       - 8080:50000
 
@@ -14,6 +15,7 @@ services:
     build:
       context: ./database
     image: andrey1981spb/users_db
+    restart: always
 
 
 
